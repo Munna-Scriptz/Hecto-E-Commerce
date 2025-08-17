@@ -9,12 +9,19 @@
 
 
 
-/* ---------Common Css--------- */
-.slick-dots li.slick-active button:before {
+
+
+
+
+/* ---------Slider Dots--------- */
+.slider-Banner-container .slick-dots {
+    bottom: -25px !important;
+}
+.slider-Banner-container .slick-dots li.slick-active button:before {
     opacity: 1 !important;
     background: #FB2E86 !important;
 }
-.slick-dots li button:before {
+.slider-Banner-container .slick-dots li button:before {
     transition: 500ms ease-in-out all;
     opacity: .8 !important;
     width: 10px !important;
@@ -22,4 +29,22 @@
     content: '' !important;
     border: 2px solid #FB2E86;
     transform: rotate(45deg);
+}
+/* ----Featured Dots  */
+.slider-Featured-container .slick-dots {
+    bottom: -70px !important;
+}
+.slider-Featured-container .slick-dots li.slick-active button:before {
+    opacity: 1 !important;
+    background: #FB2E86 !important;
+}
+.slider-Featured-container .slick-dots li button:before {
+    content: '' !important;
+    transition: 500ms ease-in-out all;
+    opacity: .3 !important;
+    width: 24px !important;
+    height: 4px !important;
+    border-radius: 10px;
+    background: #FB2E86;
+
 }

@@ -22,7 +22,7 @@ const Banner = () => {
         <div className="container">
             <div className="Banner-Row relative">
                 {/* -------------Slider------------- */}
-                <div className="slider-container">
+                <div className="slider-Banner-container">
                     <div className='absolute top-[-36px] left-[-190px]'><img src={LightDeco} alt="DecoImage" /></div>
                     <Slider {...settings}>
                         <div>
