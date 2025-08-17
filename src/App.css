@@ -48,3 +48,21 @@
     background: #FB2E86;
 
 }
+/* --------Category Dost  */
+.slider-Category-container .slick-dots {
+    bottom: -70px !important;
+}
+.slider-Category-container .slick-dots li.slick-active button:before {
+    opacity: 1 !important;
+    background: #FB2E86 !important;
+}
+.slider-Category-container .slick-dots li button:before {
+    content: '' !important;
+    transition: 500ms ease-in-out all;
+    opacity: 1 !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 10px;
+    border: 1px solid #FB2E86;
+
+}

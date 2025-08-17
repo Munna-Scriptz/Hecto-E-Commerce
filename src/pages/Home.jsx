@@ -6,6 +6,7 @@ import Services from '../components/Services'
 import UniquePro from '../components/UniquePro'
 import Trending from '../components/Trending'
 import Discount from '../components/Discount'
+import TopCategory from '../components/common/TopCategory'
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         <UniquePro/>
         <Trending/>
         <Discount/>
+        <TopCategory/>
     </>
   )
 }
