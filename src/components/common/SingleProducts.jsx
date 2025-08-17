@@ -10,7 +10,7 @@ const SingleProducts = () => {
     <div className='w-[270px]'>
         {/* ---------Product Image------- */}
         <div className='w-full h-[236px] relative'>
-            <div className='flex items-center gap-3 p-[11px]'>
+            <div className='flex items-center gap-3 p-[11px] absolute top-[11px] left-[11px]'>
                 <div className='w-[35px] h-[35px] bg-[#EEEFFB] rounded-full flex items-center justify-center text-[19px] cursor-pointer text-[#2F1AC4]'><GrCart /></div>
                 <div className='w-[35px] h-[35px] bg-[#eef8fb] rounded-full flex items-center justify-center text-[19px] cursor-pointer text-[#1389FF]'><FaRegHeart /></div>
             </div>
