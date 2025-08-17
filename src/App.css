@@ -1,1 +1,25 @@
 /* ---------Common Css--------- */
+
+
+
+
+
+
+
+
+
+
+/* ---------Common Css--------- */
+.slick-dots li.slick-active button:before {
+    opacity: 1 !important;
+    background: #FB2E86 !important;
+}
+.slick-dots li button:before {
+    transition: 500ms ease-in-out all;
+    opacity: .8 !important;
+    width: 10px !important;
+    height: 10px !important;
+    content: '' !important;
+    border: 2px solid #FB2E86;
+    transform: rotate(45deg);
+}
