@@ -1,5 +1,9 @@
 /* ---------Common Css--------- */
-
+#NewsLater{
+    background-image: url(../src/assets/images/NewslaterBg.png);
+    background-size: cover;
+    background-position: center;
+}
 
 
 
@@ -64,5 +68,4 @@
     height: 10px !important;
     border-radius: 10px;
     border: 1px solid #FB2E86;
-
 }
