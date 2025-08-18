@@ -1,12 +1,13 @@
 import React from 'react'
 import logo from '../assets/images/Logo.svg'
 import { Link } from 'react-router'
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
 const Footer = () => {
   return (
     <>
-    <footer className='mt-[115px] bg-[#EEEFFB] pt-[94px] pb-[100px]'>
+    <footer className='mt-[115px] bg-[#EEEFFB] pt-[94px]'>
         <div className="container">
-            <div id="Footer-Row" className='flex items-start justify-between'>
+            <div id="Footer-Row" className='flex items-start justify-between pb-[100px]'>
                 {/* ------------------1st Row---------------- */}
                 <div>
                     <Link to={'/'}><img src={logo} alt="Logo" /></Link>
@@ -50,6 +51,18 @@ const Footer = () => {
                         <li><Link to={'/'}>Visual Composer Elements</Link></li>
                         <li><Link to={'/'}>WooCommerce Pages</Link></li>
                     </ul>
+                </div>
+            </div>
+        </div>
+        <div id='Footer-Bottom-Row' className='bg-[#E7E4F8] py-[17px]'>
+            <div className='container'>
+                <div className='flex items-center justify-between'>
+                    <p className='text-[#9DA0AE] text-base font-lato font-semibold'>©Munna - All Rights Reserved</p>
+                    <div className='flex items-center gap-3'>
+                        <div className='bg-[#8a8fb950] rounded-[6px] p-2 text-BlueText hover:bg-BlueText hover:text-white duration-[.3s] cursor-pointer'><FaFacebookF /></div>
+                        <div className='bg-[#8a8fb950] rounded-[6px] p-2 text-BlueText hover:bg-BlueText hover:text-white duration-[.3s] cursor-pointer'><FaInstagram /></div>
+                        <div className='bg-[#8a8fb950] rounded-[6px] p-2 text-BlueText hover:bg-BlueText hover:text-white duration-[.3s] cursor-pointer'><FaTwitter /></div>
+                    </div>
                 </div>
             </div>
         </div>
