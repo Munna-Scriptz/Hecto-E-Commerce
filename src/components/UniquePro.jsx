@@ -29,7 +29,7 @@ const UniquePro = () => {
                     </ul>
                     {/* --------Link-------- */}
                     <div className='mt-[38px] flex items-center gap-5'>
-                        <CommonButton text={'Add To Cart'} py={16} px={24}/>
+                        <CommonButton text={'Add To Cart'} py={14} px={24}/>
                         <div>
                             <h2 className='font-josefin text-sm text-BlueText font-semibold'>B&B Italian Sofa </h2>
                             <p className='font-lato text-sm text-BlueText'>$32.00</p>

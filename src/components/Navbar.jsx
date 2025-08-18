@@ -15,12 +15,12 @@ const Navbar = () => {
                     <Link to={'/'}><img className='w-[98px]' src={Logo} alt="Logo" /></Link>
                     {/* ------NavIcons------ */}
                     <ul className='flex items-center gap-[35px] text-NavyBlue text-base '>
-                        <li><Link to={'/'}>Home</Link></li>
-                        <li><Link to={'/'}>Pages</Link></li>
-                        <li><Link to={'/'}>Products</Link></li>
-                        <li><Link to={'/'}>Blog</Link></li>
-                        <li><Link to={'/'}>Shop</Link></li>
-                        <li><Link to={'/'}>Contact</Link></li>
+                        <li><Link id='UlHover' to={'/'}>Home</Link></li>
+                        <li><Link id='UlHover' to={'/'}>Pages</Link></li>
+                        <li><Link id='UlHover' to={'/'}>Products</Link></li>
+                        <li><Link id='UlHover' to={'/'}>Blog</Link></li>
+                        <li><Link id='UlHover' to={'/'}>Shop</Link></li>
+                        <li><Link id='UlHover' to={'/'}>Contact</Link></li>
                     </ul>
                 </div>
                 <div className='w-[317px] h-[40px] flex items-center justify-between'>

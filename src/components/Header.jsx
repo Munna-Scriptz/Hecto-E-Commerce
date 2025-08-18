@@ -3,6 +3,7 @@ import { MdOutlineEmail, MdOutlineShoppingCart } from "react-icons/md";
 import { FiPhoneCall } from "react-icons/fi";
 import { FaAngleDown, FaRegHeart } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa";
+import { Link } from 'react-router';
 
 
 
@@ -14,14 +15,14 @@ const Header = () => {
             <div id="Header-Row" className='flex items-center justify-between'>
                 {/* -------Contact Infos------ */}
                 <div className='flex items-center gap-22'>
-                    <div className='flex items-center gap-2.5 text-brandWhite font-josefin font-semibold'>
+                    <Link id='UlHover' to={'/'} className='flex items-center gap-2.5 text-brandWhite font-josefin font-semibold'>
                         <MdOutlineEmail />
                         <p>munnascriptz@gmail.com</p>
-                    </div>
-                    <div className='flex items-center gap-2.5 text-brandWhite font-josefin font-semibold'>
+                    </Link>
+                    <Link id='UlHover' to={'/'} className='flex items-center gap-2.5 text-brandWhite font-josefin font-semibold'>
                         <FiPhoneCall />
                         <p>(12345)67890</p>
-                    </div>
+                    </Link>
                 </div>
                 {/* -------Functions------ */}
                 <div className='flex items-center gap-[18px]'>

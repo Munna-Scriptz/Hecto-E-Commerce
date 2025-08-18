@@ -11,9 +11,9 @@ const Footer = () => {
                 {/* ------------------1st Row---------------- */}
                 <div>
                     <Link to={'/'}><img src={logo} alt="Logo" /></Link>
-                    <div className='w-[377px] h-[44px] mt-[32px] flex items-center justify-between'>
-                        <input className='h-full w-[230px] outline-none' type="text" placeholder='Enter Email Address'/>
-                        <button className='bg-brand h-full px-[40px] inline-block cursor-pointer text-white font-josefin'>Sign Up</button>
+                    <div className='w-[377px] h-[44px] mt-[32px] bg-white flex items-center justify-between'>
+                        <input className='h-full w-[230px] outline-none pl-5' type="text" placeholder='Enter Email Address'/>
+                        <button className='bg-brand h-full px-[40px] rounded-[3px] inline-block cursor-pointer text-white font-josefin'>Sign Up</button>
                     </div>
                     <p className='text-subText font-lato mt-[25px] mb-[10px]'>Contact Info</p>
                     <p className='text-subText font-lato mb-[10px]'>17 Princess Road, London, Greater London NW1 8JR, UK</p>

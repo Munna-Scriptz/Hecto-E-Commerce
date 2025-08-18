@@ -32,7 +32,7 @@ const Banner = () => {
                                     <h2 className='text-brand font-bold font-lato mb-3'>Best Furniture For Your Castle....</h2>
                                     <h1 className='text-black text-[53px] font-bold font-josefin tracking-[1.5%] w-[644px]'>New Furniture Collection Trends in 2020</h1>
                                     <p className='text-subText font-bold font-lato leading-[28px] mt-3 w-[559px] mb-[43px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <CommonButton text={'Shop Now'} py={15}/>
+                                    <CommonButton text={'Shop Now'} py={'13'} px={'40'}/>
                                 </div>
                                 <div>
                                     <img src={BannerImage1} alt="Banner Image" />
