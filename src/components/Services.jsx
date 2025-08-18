@@ -34,7 +34,6 @@ const Services = () => {
                 <h2 className='text-[22px] text-BlueText font-josefin font-semibold mt-[27px]'>24/7 Support</h2>
                 <p className='text-base text-[#1A0B5B4D] leading-[25px] font-bold font-lato text-center mt-5'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.</p>
               </div>
-
             </div>
         </div>
     </section>

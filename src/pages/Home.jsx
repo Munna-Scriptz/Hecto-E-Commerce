@@ -14,17 +14,17 @@ import Blog from '../components/blog'
 const Home = () => {
   return (
     <>
-        <Banner/>
-        <Featured/>
-        <LatestProduct/>
-        <Services/>
-        <UniquePro/>
-        <Trending/>
-        <Discount/>
-        <TopCategory/>
-        <NewsLater/>
-        <Brands/>
-        <Blog/>
+      <Banner/>
+      <Featured/>
+      <LatestProduct/>
+      <Services/>
+      <UniquePro/>
+      <Trending/>
+      <Discount/>
+      <TopCategory/>
+      <NewsLater/>
+      <Brands/>
+      <Blog/>
     </>
   )
 }

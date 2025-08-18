@@ -42,7 +42,7 @@ const Header = () => {
                         <p>WhishList</p>
                         <FaRegHeart />
                     </div>
-                    <div className='text-brandWhite font-josefin font-semibold text-[20px] cursor-pointer'>
+                    <div className='text-brandWhite font-josefin font-semibold text-[20px] cursor-pointer hover:text-brand duration-[.3s]'>
                         <MdOutlineShoppingCart />
                     </div>
                 </div>
