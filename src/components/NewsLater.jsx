@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import NewsLaterBg from '../assets/images/NewslaterBg.png'
+import CommonButton from './common/CommonButton'
 const NewsLater = () => {
   return (
     <>
@@ -8,7 +9,7 @@ const NewsLater = () => {
         <div className="container">
             <div id="NewsLater-Row" className='pt-[174px] pb-[103px] flex flex-col items-center'>
                 <h2 className='text-BlueText text-[35px] font-josefin font-bold leading-[155%] text-center w-[574px]'>Get latest Update By Subscribe our Newslater</h2>
-                <Link className='py-[16px] px-[34px] text-white font-josefin text-[17px] bg-brand mt-[44px]' to={'/'}>Shop Now</Link>
+                <CommonButton text={'Shop Now'} py={16} px={34}/>
             </div>
         </div>
     </section>

@@ -3,6 +3,7 @@ import CommonHead from './common/CommonHead'
 import discountImg from '../assets/images//DiscountImg.svg'
 import { FaCheck } from "react-icons/fa6";
 import { Link } from 'react-router';
+import CommonButton from './common/CommonButton';
 
 const Discount = () => {
   return (
@@ -43,7 +44,7 @@ const Discount = () => {
                             <p className='text-[#B8B8DC] font-lato text-[16px] leading-[30px]'>Material expose like metals</p>
                         </li>
                     </ul>
-                    <Link className='bg-brand py-[15px] px-[68px] text-white font-josefin text-[17px]' to={'/'}>Shop Now</Link>
+                    <CommonButton text={'Shop Now'} py={16} px={68}/>
                 </div>
                 <div>
                     <img src={discountImg} alt="Discount Product" />

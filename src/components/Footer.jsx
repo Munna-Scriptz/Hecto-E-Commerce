@@ -54,6 +54,7 @@ const Footer = () => {
                 </div>
             </div>
         </div>
+        {/* -------------Bottom Footer---------- */}
         <div id='Footer-Bottom-Row' className='bg-[#E7E4F8] py-[17px]'>
             <div className='container'>
                 <div className='flex items-center justify-between'>

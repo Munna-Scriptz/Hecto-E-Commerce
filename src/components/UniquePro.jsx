@@ -1,6 +1,7 @@
 import React from 'react'
 import UniqueProImg from '../assets/images/UniqueFurniture.svg'
 import { Link } from 'react-router'
+import CommonButton from './common/CommonButton'
 
 const UniquePro = () => {
   return (
@@ -28,7 +29,7 @@ const UniquePro = () => {
                     </ul>
                     {/* --------Link-------- */}
                     <div className='mt-[38px] flex items-center gap-5'>
-                        <Link className='bg-brand py-[14px] px-[24px] text-white font-josefin font-semibold text-[17px]' to={'/'}>Add To Cart</Link>
+                        <CommonButton text={'Add To Cart'} py={16} px={24}/>
                         <div>
                             <h2 className='font-josefin text-sm text-BlueText font-semibold'>B&B Italian Sofa </h2>
                             <p className='font-lato text-sm text-BlueText'>$32.00</p>
