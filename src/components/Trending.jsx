@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CommonHead from './common/CommonHead'
 import SingleProducts from './common/SingleProducts'
 import Slider from 'react-slick';
@@ -8,6 +8,7 @@ import desk from '../assets/images/DeskImg.png'
 import product from '../assets/images/ProductImage.png'
 import product2 from '../assets/images/BannerImg1.svg'
 import product3 from '../assets/images/BannerImg2.svg'
+import axios from 'axios';
 
 const Trending = () => {
     const settings = {
@@ -20,6 +21,16 @@ const Trending = () => {
         speed: 1000,
         autoplaySpeed: 2500,
     };
+    // ---------------Api--------------
+    // ------Hooks 
+    const [product , setProduct] = useState([])
+    // ------Axios 
+    useEffect(() => {
+        axios.get('https://dummyjson.com/products/category/furniture')
+        .then((res)=>(setProduct(res.data.products)))
+        .catch((err)=>(console.log(err)))
+    }, []);
+    console.log(product)
   return (
     <>
     <section id='Trending' className='mt-[130px]'>
@@ -30,11 +41,11 @@ const Trending = () => {
                 <div className='mt-[34px]'>
                     <div className="slider-Featured-container">
                         <Slider {...settings}>
-                            <SingleProducts/>
-                            <SingleProducts/>
-                            <SingleProducts/>
-                            <SingleProducts/>
-                            <SingleProducts/>
+                            {
+                                product.map((item, i)=>(
+                                    <SingleProducts key={i} proImg={item.thumbnail} proName={item.title} proPrice={item.price} ProDiscount={item.discountPercentage}/>
+                                ))
+                            }
                         </Slider>
                     </div>
                 </div>
