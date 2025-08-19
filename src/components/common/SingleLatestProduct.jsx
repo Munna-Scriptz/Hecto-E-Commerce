@@ -1,8 +1,7 @@
 import React from 'react'
 import { FaRegHeart, FaStar } from 'react-icons/fa'
 import { GrCart } from 'react-icons/gr'
-import ProductImg1 from '../../assets/images/SingleLatestImg1.png'
-const SingleLatestProduct = () => {
+const SingleLatestProduct = ({proImage , proName , proPrice , ProDiscount}) => {
   return (
     <>
     <div className='w-[360px]'>
@@ -18,14 +17,14 @@ const SingleLatestProduct = () => {
                         <span className="WishlistTooltip font-poppins text-white">Wishlist</span>
                     </div>
                 </div>
-                <img src={ProductImg1} alt="Product Image" />
+                <img src={proImage} alt="Product Image" />
             </div>
             {/* ---------Product Text------- */}
             <div className='mt-[26px] flex items-center justify-between'>
-                <h2 className='text-base text-BlueText font-josefin'>Comfort Handy Craft</h2>
+                <h2 className='text-base text-BlueText font-josefin'>{proName}</h2>
                 <div className='flex items-center gap-2'>
-                    <p className='text-BlueText font-josefin text-sm'>$42.00</p>
-                    <p className='text-brand line-through font-josefin text-[12px]'>$42.00</p>
+                    <p className='text-BlueText font-josefin text-sm'>${proPrice}</p>
+                    <p className='text-brand line-through font-josefin text-[12px]'>${ProDiscount}</p>
                 </div>
             </div>
         </div>
