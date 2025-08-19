@@ -1,10 +1,9 @@
 import React from 'react'
-import ProductImage from '../../assets/images/ProductImage.png'
 import { FaStar } from "react-icons/fa";
 import { GrCart } from "react-icons/gr";
 import { FaRegHeart } from "react-icons/fa";
 
-const SingleProducts = () => {
+const SingleProducts = ({proImg , proName , ProDesc , proPrice}) => {
   return (
     <>
     <div className='w-[270px]'>
@@ -20,14 +19,14 @@ const SingleProducts = () => {
                     <span className="WishlistTooltip font-poppins text-white">Wishlist</span>
                 </div>
             </div>
-            <img src={ProductImage} alt="Product Image" />
+            <img src={proImg} alt="Product Image" />
         </div>
         {/* ---------Product Text------- */}
-        <div className='mt-[27px]'>
-            <p className='text-brand text-lg font-bold font-lato '>Cantilever chair</p>
-            <p className='text-subText font-medium font-lato mt-1'>Best Sellers Best selling of the month</p>
+        <div className='mt-[47px]'>
+            <p className='text-brand text-lg font-bold font-lato line-clamp-1'>{proName}</p>
+            <p className='text-subText font-medium font-lato mt-1 line-clamp-2'>{ProDesc}</p>
             <div className='flex items-center justify-between mt-4'>
-                <p className='text-[#151875] text-[18px] font-lato'>$42.00</p>
+                <p className='text-[#151875] text-[18px] font-lato'>${proPrice}</p>
                 <div className='flex items-center gap-1.5'>
                     <FaStar className='text-[#FBBF24]'/>
                     <p className='text-[#151875] text-[16px] font-lato'>4.9</p>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import CommonHead from './common/CommonHead'
 import SingleProducts from './common/SingleProducts'
 import Slider from 'react-slick';
@@ -15,9 +15,13 @@ const Featured = () => {
         speed: 1000,
         autoplaySpeed: 2500,
     };
+    // ---------------Api--------------
+    // ------Hooks 
+    const [product , setProduct] = useState([])
+    // ------Axios 
     useEffect(() => {
-        axios.get('https://api.escuelajs.co/api/v1/products')
-        .then((res)=>console.log(res))
+        axios.get('https://api.escuelajs.co/api/v1/products/?categoryId=3')
+        .then((res)=>(setProduct(res.data)))
         .catch((err)=>(console.log(err)))
     }, []);
 
@@ -31,11 +35,11 @@ const Featured = () => {
                 <div className='mt-[34px]'>
                     <div className="slider-Featured-container">
                         <Slider {...settings}>
-                            <SingleProducts/>
-                            <SingleProducts/>
-                            <SingleProducts/>
-                            <SingleProducts/>
-                            <SingleProducts/>
+                            {
+                                product.map((item , i)=>(
+                                    <SingleProducts proImg={item.images[0]} proName={item.title} ProDesc={item.description} proPrice={item.price}/>
+                                ))
+                            }
                         </Slider>
                     </div>
                 </div>
