@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import CommonHead from './common/CommonHead'
-import SingleCategory from './common/SingleCategory'
+import CommonHead from '../common/CommonHead'
+import SingleCategory from '../common/SingleCategory'
 import Slider from 'react-slick';
 import axios from 'axios';
 

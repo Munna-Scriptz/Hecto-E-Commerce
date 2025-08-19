@@ -1,9 +1,9 @@
 import React from 'react'
-import CommonHead from './common/CommonHead'
-import img1 from '../assets/images/ServiceIcon1.svg'
-import img2 from '../assets/images/ServiceIcon2.svg'
-import img3 from '../assets/images/ServiceIcon3.svg'
-import img4 from '../assets/images/ServiceIcon4.svg'
+import CommonHead from '../common/CommonHead'
+import img1 from '../../assets/images/ServiceIcon1.svg'
+import img2 from '../../assets/images/ServiceIcon2.svg'
+import img3 from '../../assets/images/ServiceIcon3.svg'
+import img4 from '../../assets/images/ServiceIcon4.svg'
 const Services = () => {
   return (
     <>

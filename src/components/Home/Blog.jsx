@@ -1,9 +1,9 @@
 import React from 'react'
-import CommonHead from './common/CommonHead'
-import SingleBlogCard from './common/SingleBlogCard'
-import blogImg from '../assets/images/blogImg1.png'
-import blogImg2 from '../assets/images/blogImg2.png'
-import blogImg3 from '../assets/images/blogImg3.png'
+import CommonHead from '../common/CommonHead'
+import SingleBlogCard from '../common/SingleBlogCard'
+import blogImg from '../../assets/images/blogImg1.png'
+import blogImg2 from '../../assets/images/blogImg2.png'
+import blogImg3 from '../../assets/images/blogImg3.png'
 
 const Blog = () => {
   return (

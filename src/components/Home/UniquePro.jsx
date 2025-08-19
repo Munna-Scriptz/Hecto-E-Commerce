@@ -1,7 +1,6 @@
 import React from 'react'
-import UniqueProImg from '../assets/images/UniqueFurniture.svg'
-import { Link } from 'react-router'
-import CommonButton from './common/CommonButton'
+import UniqueProImg from '../../assets/images/UniqueFurniture.svg'
+import CommonButton from '../common/CommonButton'
 
 const UniquePro = () => {
   return (

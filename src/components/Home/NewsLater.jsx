@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router'
-import NewsLaterBg from '../assets/images/NewslaterBg.png'
-import CommonButton from './common/CommonButton'
 const NewsLater = () => {
   return (
     <>
@@ -9,7 +7,10 @@ const NewsLater = () => {
         <div className="container">
             <div id="NewsLater-Row" className='pt-[174px] pb-[103px] flex flex-col items-center'>
                 <h2 className='text-BlueText text-[35px] font-josefin font-bold leading-[155%] text-center w-[574px]'>Get latest Update By Subscribe our Newslater</h2>
-                <CommonButton text={'Shop Now'} py={16} px={34}/>
+                <Link to={'/shop'} className={`relative flex items-center justify-center py-[12px] px-[44px]  overflow-hidden text-white bg-brand group rounded-md w-fit`}>
+                  <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-BlueText rounded-full group-hover:w-56 group-hover:h-56"></span>
+                  <span className="relative font-josefin text-[16px]">Shop Now</span>
+                </Link>
             </div>
         </div>
     </section>

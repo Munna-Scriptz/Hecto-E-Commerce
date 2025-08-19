@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/images/Logo.svg'
+import logo from '../../assets/images/Logo.svg'
 import { Link } from 'react-router'
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
 const Footer = () => {

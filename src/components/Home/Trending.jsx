@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import CommonHead from './common/CommonHead'
-import SingleProducts from './common/SingleProducts'
+import CommonHead from '../common/CommonHead'
+import SingleProducts from '../common/SingleProducts'
 import Slider from 'react-slick';
 import { Link } from 'react-router';
-import clock from '../assets/images/ClockImg.png'
-import desk from '../assets/images/DeskImg.png'
-import product from '../assets/images/ProductImage.png'
-import product2 from '../assets/images/BannerImg1.svg'
-import product3 from '../assets/images/BannerImg2.svg'
+import clock from '../../assets/images/ClockImg.png'
+import desk from '../../assets/images/DeskImg.png'
+import product2 from '../../assets/images/BannerImg1.svg'
+import product3 from '../../assets/images/BannerImg2.svg'
 import axios from 'axios';
 
 const Trending = () => {

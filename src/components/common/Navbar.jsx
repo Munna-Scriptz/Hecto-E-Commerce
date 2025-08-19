@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../assets/images/Logo.svg'
+import Logo from '../../assets/images/Logo.svg'
 import { Link } from 'react-router'
 import { IoSearchOutline } from "react-icons/io5";
 
@@ -19,7 +19,7 @@ const Navbar = () => {
                         <li><Link id='UlHover' to={'/'}>Pages</Link></li>
                         <li><Link id='UlHover' to={'/'}>Products</Link></li>
                         <li><Link id='UlHover' to={'/'}>Blog</Link></li>
-                        <li><Link id='UlHover' to={'/'}>Shop</Link></li>
+                        <li><Link id='UlHover' to={'/shop'}>Shop</Link></li>
                         <li><Link id='UlHover' to={'/'}>Contact</Link></li>
                         <li><Link id='UlHover' to={'/about'}>About</Link></li>
                     </ul>

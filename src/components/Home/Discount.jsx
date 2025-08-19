@@ -1,9 +1,8 @@
 import React from 'react'
-import CommonHead from './common/CommonHead'
-import discountImg from '../assets/images//DiscountImg.svg'
+import CommonHead from '../common/CommonHead'
+import discountImg from '../../assets/images//DiscountImg.svg'
 import { FaCheck } from "react-icons/fa6";
 import { Link } from 'react-router';
-import CommonButton from './common/CommonButton';
 
 const Discount = () => {
   return (
@@ -44,7 +43,10 @@ const Discount = () => {
                             <p className='text-[#B8B8DC] font-lato text-[16px] leading-[30px]'>Material expose like metals</p>
                         </li>
                     </ul>
-                    <CommonButton text={'Shop Now'} py={16} px={68}/>
+                    <Link to={'/shop'} className={`relative flex items-center justify-center py-[16px] px-[68px]  overflow-hidden text-white bg-brand group rounded-md w-fit`}>
+                        <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-BlueText rounded-full group-hover:w-56 group-hover:h-56"></span>
+                        <span className="relative font-josefin text-[16px]">Shop Now</span>
+                    </Link>
                 </div>
                 <div>
                     <img src={discountImg} alt="Discount Product" />

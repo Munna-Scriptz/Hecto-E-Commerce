@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import CommonHead from './common/CommonHead'
-import SingleLatestProduct from './common/SingleLatestProduct'
+import CommonHead from '../common/CommonHead'
+import SingleLatestProduct from '../common/SingleLatestProduct'
 import axios from 'axios'
 
 const LatestProduct = () => {
