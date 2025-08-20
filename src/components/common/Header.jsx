@@ -14,7 +14,7 @@ const Header = () => {
         <div className="container">
             <div id="Header-Row" className='flex items-center justify-between'>
                 {/* -------Contact Infos------ */}
-                <div className='flex items-center gap-22'>
+                <div className='items-center gap-22 md:flex hidden'>
                     <Link id='UlHover' to={'/'} className='flex items-center gap-2.5 text-brandWhite font-josefin font-semibold'>
                         <MdOutlineEmail />
                         <p>munnascriptz@gmail.com</p>
@@ -25,20 +25,20 @@ const Header = () => {
                     </Link>
                 </div>
                 {/* -------Functions------ */}
-                <div className='flex items-center gap-[18px]'>
-                    <div className='text-brandWhite font-josefin font-semibold flex items-center gap-1 cursor-pointer'>
+                <div className='flex items-center lg:justify-start justify-around lg:gap-[18px] gap-[14px]'>
+                    <div className='text-brandWhite font-josefin font-semibold flex items-center gap-1 lg:text-base text-[14px] cursor-pointer'>
                         <p>English</p>
                         <FaAngleDown />
                     </div>
-                    <div className='text-brandWhite font-josefin font-semibold flex items-center gap-1 cursor-pointer'>
+                    <div className='text-brandWhite font-josefin font-semibold flex items-center gap-1 lg:text-base text-[14px] cursor-pointer'>
                         <p>USD</p>
                         <FaAngleDown />
                     </div>
-                    <div className='text-brandWhite font-josefin font-semibold flex items-center gap-1 cursor-pointer'>
+                    <div className='text-brandWhite font-josefin font-semibold flex items-center gap-1 lg:text-base text-[14px] cursor-pointer'>
                         <p>Login</p>
                         <FaRegUser />
                     </div>
-                    <div className='text-brandWhite font-josefin font-semibold flex items-center gap-1 cursor-pointer'>
+                    <div className='text-brandWhite font-josefin font-semibold flex items-center gap-1 lg:text-base text-[14px] cursor-pointer'>
                         <p>WhishList</p>
                         <FaRegHeart />
                     </div>

@@ -7,7 +7,7 @@ import { IoSearchOutline } from "react-icons/io5";
 const Navbar = () => {
   return (
     <>
-    <nav>
+    <nav className='lg:block hidden'>
         <div className="container">
             <div id="Navbar-Row" className='py-[19px] flex items-center justify-between'>
                 <div className='flex items-center gap-[88px]'>
