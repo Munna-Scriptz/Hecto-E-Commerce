@@ -15,15 +15,25 @@ const TopCategory = () => {
     speed: 1000,
     autoplaySpeed: 2500,
   };
-  // ---------------Api--------------
-  // ------Hooks 
-  const [product , setProduct] = useState([])
-  // ------Axios 
-  useEffect(() => {
-      axios.get('https://api.escuelajs.co/api/v1/products/?categoryId=3')
-      .then((res)=>(setProduct(res.data)))
-      .catch((err)=>(console.log(err)))
-  }, []);
+  // // ---------------Api--------------
+  // // ------Hooks 
+  // const [product , setProduct] = useState([])
+  // // ------Axios 
+  // useEffect(() => {
+  //     axios.get('https://api.escuelajs.co/api/v1/products/?categoryId=3')
+  //     .then((res)=>(setProduct(res.data)))
+  //     .catch((err)=>(console.log(err)))
+  // }, []);
+   // ---------------Api--------------
+    // ------Hooks 
+    const [product , setProduct] = useState([])
+    // ------Axios 
+    useEffect(() => {
+        axios.get('https://dummyjson.com/products/category/furniture')
+        .then((res)=>(setProduct(res.data.products)))
+        .catch((err)=>(console.log(err)))
+    }, []);
+    console.log(product)
   return (
     <>
     <section id='TopCategory' className='mt-[80px]'>

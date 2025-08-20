@@ -27,43 +27,43 @@ const Banner = () => {
             <div className="Banner-Row relative">
                 {/* -------------Slider------------- */}
                 <div className="slider-Banner-container">
-                    <div className='absolute top-[-36px] left-[-190px]'><img src={LightDeco} alt="DecoImage" /></div>
+                    <div className='absolute top-[-36px] left-[-190px] lg:block hidden'><img src={LightDeco} alt="DecoImage" /></div>
                     <Slider {...settings}>
                         <div>
-                            <div className='flex items-center justify-between'>
+                            <div className='flex lg:flex-row flex-col-reverse items-center justify-between'>
                                 <div id="bannerText">
                                     <h2 className='text-brand font-bold font-lato mb-3'>Best Furniture For Your Castle....</h2>
-                                    <h1 className='text-black text-[53px] font-bold font-josefin tracking-[1.5%] w-[644px]'>New Furniture Collection Trends in 2020</h1>
-                                    <p className='text-subText font-bold font-lato leading-[28px] mt-3 w-[559px] mb-[43px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
+                                    <h1 className='text-black lg:text-[53px] text-[32px] font-bold font-josefin tracking-[1.5%] lg:w-[644px] w-full'>New Furniture Collection Trends in 2020</h1>
+                                    <p className='text-subText font-bold font-lato lg:leading-[28px] text-sm mt-3 lg:w-[559px] w-full lg:mb-[43px] mb-[30px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
                                     <CommonButton text={'Shop Now'} py={'13'} px={'40'}/>
                                 </div>
-                                <div>
+                                <div className='lg:mb-0 mb-[50px]'>
                                     <img src={BannerImage1} alt="Banner Image" />
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <div className='flex items-center justify-between'>
+                            <div className='flex lg:flex-row flex-col-reverse items-center justify-between'>
                                 <div id="bannerText">
                                     <h2 className='text-brand font-bold font-lato mb-3'>Best Furniture For Your Castle....</h2>
-                                    <h1 className='text-black text-[53px] font-bold font-josefin tracking-[1.5%] w-[644px]'>New Furniture Collection Trends in 2020</h1>
-                                    <p className='text-subText font-bold font-lato leading-[28px] mt-3 w-[559px] mb-[43px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <Link className='bg-brand py-4 px-10 text-white text-[17px] font-josefin font-semibold' to={'/shop'}>Shop Now</Link>
+                                    <h1 className='text-black lg:text-[53px] text-[32px] font-bold font-josefin tracking-[1.5%] lg:w-[644px] w-full'>New Furniture Collection Trends in 2020</h1>
+                                    <p className='text-subText font-bold font-lato lg:leading-[28px] text-sm mt-3 lg:w-[559px] w-full lg:mb-[43px] mb-[30px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
+                                    <CommonButton text={'Shop Now'} py={'13'} px={'40'}/>
                                 </div>
-                                <div>
+                                <div className='lg:mb-0 mb-[50px]'>
                                     <img src={BannerImage2} alt="Banner Image" />
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <div className='flex items-center justify-between'>
+                            <div className='flex lg:flex-row flex-col-reverse items-center justify-between'>
                                 <div id="bannerText">
                                     <h2 className='text-brand font-bold font-lato mb-3'>Best Furniture For Your Castle....</h2>
-                                    <h1 className='text-black text-[53px] font-bold font-josefin tracking-[1.5%] w-[644px]'>New Furniture Collection Trends in 2020</h1>
-                                    <p className='text-subText font-bold font-lato leading-[28px] mt-3 w-[559px] mb-[43px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <Link className='bg-brand py-4 px-10 text-white text-[17px] font-josefin font-semibold' to={'/'}>Shop Now</Link>
+                                    <h1 className='text-black lg:text-[53px] text-[32px] font-bold font-josefin tracking-[1.5%] lg:w-[644px] w-full'>New Furniture Collection Trends in 2020</h1>
+                                    <p className='text-subText font-bold font-lato lg:leading-[28px] text-sm mt-3 lg:w-[559px] w-full lg:mb-[43px] mb-[30px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
+                                    <CommonButton text={'Shop Now'} py={'13'} px={'40'}/>
                                 </div>
-                                <div>
+                                <div className='lg:mb-0 mb-[50px]'>
                                     <img src={BannerImage3} alt="Banner Image" />
                                 </div>
                             </div>

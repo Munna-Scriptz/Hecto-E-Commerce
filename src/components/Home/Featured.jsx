@@ -14,17 +14,57 @@ const Featured = () => {
         autoplay: true,
         speed: 1000,
         autoplaySpeed: 2500,
+        responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 320,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
     };
-    // ---------------Api--------------
+    // // ---------------Api--------------
+    // // ------Hooks 
+    // const [product , setProduct] = useState([])
+    // // ------Axios 
+    // useEffect(() => {
+    //     axios.get('https://api.escuelajs.co/api/v1/products/?categoryId=3')
+    //     .then((res)=>(setProduct(res.data)))
+    //     .catch((err)=>(console.log(err)))
+    // }, []);
+    // console.log(product)
+     // ---------------Api--------------
     // ------Hooks 
     const [product , setProduct] = useState([])
     // ------Axios 
     useEffect(() => {
-        axios.get('https://api.escuelajs.co/api/v1/products/?categoryId=3')
-        .then((res)=>(setProduct(res.data)))
+        axios.get('https://dummyjson.com/products/category/furniture')
+        .then((res)=>(setProduct(res.data.products)))
         .catch((err)=>(console.log(err)))
     }, []);
-
   return (
     <>
     <section id='Featured' className='mt-[130px]'>
@@ -37,7 +77,7 @@ const Featured = () => {
                         <Slider {...settings}>
                             {
                                 product.map((item , i)=>(
-                                    <SingleProducts proImg={item.images[0]} proName={item.title} ProDesc={item.description} proPrice={item.price}/>
+                                    <SingleProducts key={i} proImg={item.images[0]} proName={item.title} ProDesc={item.description} proPrice={item.price}/>
                                 ))
                             }
                         </Slider>
