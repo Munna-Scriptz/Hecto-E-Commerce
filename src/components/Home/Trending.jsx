@@ -5,6 +5,7 @@ import Slider from 'react-slick';
 import { Link } from 'react-router';
 import clock from '../../assets/images/ClockImg.png'
 import desk from '../../assets/images/DeskImg.png'
+import product1 from '../../assets/images/BannerImg1.svg'
 import product2 from '../../assets/images/BannerImg1.svg'
 import product3 from '../../assets/images/BannerImg2.svg'
 import axios from 'axios';
@@ -51,24 +52,24 @@ const Trending = () => {
             </div>
             {/* ---------------Discount Product------------- */}
             <div id="DiscountRow" className='mt-[112px]'>
-                <div className='flex items-center justify-between'>
-                    <div className='flex flex-col items-start w-[420px] py-[34px] px-[24px]'>
+                <div className='flex lg:flex-row flex-col items-center justify-between'>
+                    <div className='flex flex-col items-start lg:w-[420px] w-full py-[34px] px-[24px]'>
                         <div>
                             <h2 className='text-BlueText text-[26px] font-josefin font-semibold'>23% off in all products</h2>
                             <Link className='text-brand underline font-lato font-semibold' to={'/'}>Shop Now</Link>
                         </div>
                         <img src={clock} alt="Clock" />
                     </div>
-                    <div className='flex flex-col items-start w-[420px] py-[34px] px-[24px]'>
+                    <div className='flex flex-col items-start lg:w-[420px] w-full py-[34px] px-[24px]'>
                         <div>
                             <h2 className='text-BlueText text-[26px] font-josefin font-semibold'>23% off in all products</h2>
                             <Link className='text-brand underline font-lato font-semibold' to={'/'}>Shop Now</Link>
                         </div>
                         <img src={desk} alt="Clock" />
                     </div>
-                    <div className='flex flex-col gap-5 w-[420px] py-[34px] px-[24px]'>
+                    <div className='flex flex-col gap-5 lg:w-[420px] w-full py-[34px] px-[24px]'>
                         <div className='flex items-center gap-[30px]'>
-                            <img className='w-[84px]' src={product} alt="image" />
+                            <img className='w-[84px]' src={product1} alt="image" />
                             <div>
                                 <h2 className='text-base text-BlueText font-josefin font-semibold'>Executive Seat chair</h2>
                                 <p className='text-xm text-BlueText font-josefin font-nal line-through'>$32.00</p>

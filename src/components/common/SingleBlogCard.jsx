@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 const SingleBlogCard = ({img , publisher , date , heading, details}) => {
   return (
     <>
-    <div className='w-[370px] pb-[35px]'>
+    <div className='lg:w-[370px w-full] pb-[35px]'>
         <img src={img} alt="Blog Image" />
         <div className='mt-[19px] flex items-center gap-[29px]'>
             <p className='text-[14px] text-BlueText font-josefin flex items-center gap-2'><FaPenNib className='text-brand'/>{publisher}</p>

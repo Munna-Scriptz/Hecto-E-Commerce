@@ -4,7 +4,7 @@ import { GrCart } from 'react-icons/gr'
 const SingleLatestProduct = ({proImage , proName , proPrice , ProDiscount}) => {
   return (
     <>
-    <div className='w-[360px]'>
+    <div className='lg:w-[360px] w-full'>
             {/* ---------Product Image------- */}
             <div className='w-full h-[270px] relative'>
                 <div className='flex items-center gap-3 p-[11px] absolute top-[11px] left-[11px]'>

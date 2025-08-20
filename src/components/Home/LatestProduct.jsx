@@ -37,7 +37,7 @@ const LatestProduct = () => {
                 {/* ----------Header--------- */}
                 <CommonHead text={'Latest Products'}/>
                 <div>
-                    <ul className='flex items-center justify-center gap-[60px] mt-2 font-lato text-lg text-[#151875]'>
+                    <ul className='flex items-center justify-center lg:gap-[60px] gap-[15px] mt-2 font-lato lg:text-lg text-sm text-[#151875]'>
                         <li><button onClick={NormalPage} className='hover:text-brand duration-[.3s] cursor-pointer'>New Arrival</button></li>
                         <li><button onClick={handlePeg} className='hover:text-brand duration-[.3s] cursor-pointer'>Best Seller</button></li>
                         <li><button onClick={handlePeg2} className='hover:text-brand duration-[.3s] cursor-pointer'>Featured</button></li>

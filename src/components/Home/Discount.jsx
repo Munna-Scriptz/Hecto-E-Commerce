@@ -13,15 +13,15 @@ const Discount = () => {
             {/* ---------------Header----------- */}
             <CommonHead text={'Discount Item'}/>
             <div className='mt-[20px]'>
-                <ul className='flex items-center justify-center gap-[60px] font-lato text-lg text-[#151875]'>
+                <ul className='flex items-center justify-center lg:gap-[60px] gap-[10px] font-lato lg:text-lg text-sm text-[#151875]'>
                     <li><button className='hover:text-brand duration-[.3s] cursor-pointer'>Wood Chair</button></li>
                     <li><button className='hover:text-brand duration-[.3s] cursor-pointer'>Plastic Chair</button></li>
                     <li><button className='hover:text-brand duration-[.3s] cursor-pointer'>Sofa Collection</button></li>
                 </ul>
             </div>
             {/* ----------Left Side---------- */}
-            <div className='flex items-center justify-baseline'>
-                <div className='w-[509px]'>
+            <div className='flex lg:flex-row flex-col-reverse items-center justify-baseline lg:mt-0 mt-10'>
+                <div className='lg:w-[509px] w-full'>
                     <h2 className='text-BlueText font-josefin text-[35px] font-bold'>20% Discount Of All Products</h2>
                     <p className='text-brand text-[21px] font-josefin mt-4'>Eams Sofa Compact</p>
                     <p className='text-[#B7BACB] font-lato text-[17px] leading-[30px] mt-5 mb-[28px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu eget feugiat habitasse nec, bibendum condimentum.</p>

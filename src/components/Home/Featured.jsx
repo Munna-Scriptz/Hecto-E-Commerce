@@ -5,21 +5,22 @@ import Slider from 'react-slick';
 import axios from 'axios';
 
 const Featured = () => {
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 1000,
-        autoplaySpeed: 2500,
-        responsive: [
+   const settings = {
+    infinite: true,
+    slidesToShow: 4,
+    speed: 500,
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    pauseOnHover: true,
+    responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
+          infinite: true,
+          dots: true
         }
       },
       {
@@ -42,10 +43,11 @@ const Featured = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: true,
         }
       }
     ]
-    };
+  };
     // // ---------------Api--------------
     // // ------Hooks 
     // const [product , setProduct] = useState([])
