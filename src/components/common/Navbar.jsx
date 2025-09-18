@@ -20,7 +20,7 @@ const Navbar = () => {
                         <li><Link id='UlHover' to={'/'}>Products</Link></li>
                         <li><Link id='UlHover' to={'/'}>Blog</Link></li>
                         <li><Link id='UlHover' to={'/shop'}>Shop</Link></li>
-                        <li><Link id='UlHover' to={'/'}>Contact</Link></li>
+                        <li><Link id='UlHover' to={'/'}>Faq</Link></li>
                         <li><Link id='UlHover' to={'/about'}>About</Link></li>
                     </ul>
                 </div>

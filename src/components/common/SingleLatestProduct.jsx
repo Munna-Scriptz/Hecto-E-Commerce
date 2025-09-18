@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaRegHeart, FaStar } from 'react-icons/fa'
 import { GrCart } from 'react-icons/gr'
+
 const SingleLatestProduct = ({proImage , proName , proPrice , ProDiscount}) => {
   return (
     <>
