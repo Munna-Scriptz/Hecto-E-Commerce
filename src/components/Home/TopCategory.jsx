@@ -3,6 +3,7 @@ import CommonHead from '../common/CommonHead'
 import SingleCategory from '../common/SingleCategory'
 import Slider from 'react-slick';
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 const TopCategory = () => {
   const settings = {
@@ -67,7 +68,12 @@ const TopCategory = () => {
         .then((res)=>(setProduct(res.data.products)))
         .catch((err)=>(console.log(err)))
     }, []);
-    console.log(product)
+    // ---------------------Redirect To Details 
+    const navigate = useNavigate()
+
+    const handleNav = (idNo)=>{
+      navigate(`/details/${idNo}`)
+    }
   return (
     <>
     <section id='TopCategory' className='mt-[80px]'>
@@ -80,7 +86,7 @@ const TopCategory = () => {
                         <Slider {...settings}>
                           {
                             product.map((item , i )=>(
-                              <SingleCategory proImg={item.images[0]} proName={item.title} ProDesc={item.description} proPrice={item.price}/>
+                              <SingleCategory handleNav={()=>handleNav(item.id)} proImg={item.images[0]} proName={item.title} ProDesc={item.description} proPrice={item.price}/>
                             ))
                           }
                         </Slider>

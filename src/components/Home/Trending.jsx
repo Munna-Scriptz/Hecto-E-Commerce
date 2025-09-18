@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import CommonHead from '../common/CommonHead'
 import SingleProducts from '../common/SingleProducts'
 import Slider from 'react-slick';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import clock from '../../assets/images/ClockImg.png'
 import desk from '../../assets/images/DeskImg.png'
 import product1 from '../../assets/images/BannerImg1.svg'
@@ -64,7 +64,12 @@ const Trending = () => {
         .then((res)=>(setProduct(res.data.products)))
         .catch((err)=>(console.log(err)))
     }, []);
-    console.log(product)
+    // ---------------------Redirect To Details 
+    const navigate = useNavigate()
+
+    const handleNav = (idNo)=>{
+      navigate(`/details/${idNo}`)
+    }
   return (
     <>
     <section id='Trending' className='mt-[130px]'>
@@ -77,7 +82,7 @@ const Trending = () => {
                         <Slider {...settings}>
                             {
                                 product.map((item, i)=>(
-                                    <SingleProducts key={i} proImg={item.thumbnail} proName={item.title} proPrice={item.price} ProDiscount={item.discountPercentage}/>
+                                    <SingleProducts handleNav={()=>handleNav(item.id)} key={i} proImg={item.thumbnail} proName={item.title} proPrice={item.price} ProDiscount={item.discountPercentage}/>
                                 ))
                             }
                         </Slider>
@@ -90,14 +95,14 @@ const Trending = () => {
                     <div className='flex flex-col items-start lg:w-[420px] w-full py-[34px] px-[24px]'>
                         <div>
                             <h2 className='text-BlueText text-[26px] font-josefin font-semibold'>23% off in all products</h2>
-                            <Link className='text-brand underline font-lato font-semibold' to={'/'}>Shop Now</Link>
+                            <Link className='text-brand underline font-lato font-semibold' to={'/shop'}>Shop Now</Link>
                         </div>
                         <img src={clock} alt="Clock" />
                     </div>
                     <div className='flex flex-col items-start lg:w-[420px] w-full py-[34px] px-[24px]'>
                         <div>
                             <h2 className='text-BlueText text-[26px] font-josefin font-semibold'>23% off in all products</h2>
-                            <Link className='text-brand underline font-lato font-semibold' to={'/'}>Shop Now</Link>
+                            <Link className='text-brand underline font-lato font-semibold' to={'/shop'}>Shop Now</Link>
                         </div>
                         <img src={desk} alt="Clock" />
                     </div>

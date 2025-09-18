@@ -1,9 +1,8 @@
 import React from 'react'
-import { FaStar } from "react-icons/fa";
+import { FaSearchPlus, FaStar } from "react-icons/fa";
 import { GrCart } from "react-icons/gr";
-import { FaRegHeart } from "react-icons/fa";
 
-const SingleProducts = ({proImg , proName , ProDesc , proPrice}) => {
+const SingleProducts = ({proImg , proName , ProDesc , proPrice , handleNav}) => {
   return (
     <>
     <div className='lg:w-[270px] w-full'>
@@ -14,9 +13,9 @@ const SingleProducts = ({proImg , proName , ProDesc , proPrice}) => {
                     <GrCart />
                     <span className="tooltip font-poppins text-white">Cart</span>
                 </div>
-                <div className='wishlist w-[35px] h-[35px] bg-[#eef8fb] rounded-full flex items-center justify-center text-[19px] cursor-pointer text-[#1389FF]'>
-                    <FaRegHeart />
-                    <span className="WishlistTooltip font-poppins text-white">Wishlist</span>
+                <div onClick={handleNav} className='wishlist w-[35px] h-[35px] bg-[#eef8fb] rounded-full flex items-center justify-center text-[19px] cursor-pointer text-[#1389FF]'>
+                    <FaSearchPlus />
+                    <span className="WishlistTooltip font-poppins text-white">View</span>
                 </div>
             </div>
             <img src={proImg} alt="Product Image" />

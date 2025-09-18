@@ -5,6 +5,7 @@ import Slider from 'react-slick';
 import axios from 'axios';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useNavigate } from 'react-router';
 const Featured = () => {
    const settings = {
     infinite: true,
@@ -58,6 +59,13 @@ const Featured = () => {
         .then((res)=>(setProduct(res.data.products)))
         .catch((err)=>(console.log(err)))
     }, []);
+
+    // ---------------------Redirect To Details 
+    const navigate = useNavigate()
+
+    const handleNav = (idNo)=>{
+      navigate(`/details/${idNo}`)
+    }
   return (
     <>
     <section id='Featured' className='mt-[130px]'>
@@ -70,7 +78,7 @@ const Featured = () => {
                         <Slider {...settings}>
                             {
                                 product.map((item , i)=>(
-                                    <SingleProducts key={i} proImg={item.images[0]} proName={item.title} ProDesc={item.description} proPrice={item.price}/>
+                                    <SingleProducts handleNav={()=> handleNav(item.id)} key={i} proImg={item.images[0]} proName={item.title} ProDesc={item.description} proPrice={item.price}/>
                                 ))
                             }
                         </Slider>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import CommonHead from '../common/CommonHead'
 import SingleLatestProduct from '../common/SingleLatestProduct'
 import axios from 'axios'
+import { useNavigate } from 'react-router'
 
 const LatestProduct = () => {
     // ---------------Api--------------
@@ -29,6 +30,13 @@ const LatestProduct = () => {
     const handlePeg3 = () => {
         setPage(prev => prev + 1);
     };
+
+    // ---------------------Redirect To Details 
+    const navigate = useNavigate()
+
+    const handleNav = (idNo)=>{
+      navigate(`/details/${idNo}`)
+    }
   return (
     <>
     <section id='LatestProduct' className='mt-[130px]'>
@@ -48,7 +56,7 @@ const LatestProduct = () => {
                 <div className='mt-[62px] flex items-center justify-between flex-wrap gap-y-[120px]'>
                     {
                         product.slice(page * itemsPerPage, (page + 1) * itemsPerPage).map((item, i)=>(
-                            <SingleLatestProduct key={i} proImage={item.thumbnail} proName={item.title} proPrice={item.price} ProDiscount={item.discountPercentage}/>
+                            <SingleLatestProduct handleNav={()=>handleNav(item.id)} key={i} proImage={item.thumbnail} proName={item.title} proPrice={item.price} ProDiscount={item.discountPercentage}/>
                         ))
                     }
                 </div>

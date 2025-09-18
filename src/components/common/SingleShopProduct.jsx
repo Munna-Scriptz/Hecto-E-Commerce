@@ -1,8 +1,7 @@
 import React from 'react'
-import { FaRegHeart, FaSearchPlus, FaStar } from 'react-icons/fa'
+import { FaRegHeart, FaSearchPlus } from 'react-icons/fa'
 import { GrCart } from 'react-icons/gr'
-import image from '../../assets/images/ProductImage.png'
-const SingleShopProduct = ({proImage , proName , proPrice , ProDiscount}) => {
+const SingleShopProduct = ({proImage , proName , proPrice , ProDiscount , handleNav}) => {
   return (
     <>
         <div className='lg:w-[270px] w-full hover:bg-[#EBF4F3] pb-2 rounded-[5px] duration-300'>
@@ -13,7 +12,7 @@ const SingleShopProduct = ({proImage , proName , proPrice , ProDiscount}) => {
                         <GrCart />
                         <span className="tooltip font-poppins text-white">Cart</span>
                     </div>
-                    <div className='w-[35px] h-[35px] bg-[#eef8fb] rounded-full flex items-center justify-center text-[19px] cursor-pointer text-primary'>
+                    <div onClick={handleNav} className='w-[35px] h-[35px] bg-[#eef8fb] rounded-full flex items-center justify-center text-[19px] cursor-pointer text-primary'>
                         <FaSearchPlus />
                     </div>
                     <div className='w-[35px] h-[35px] bg-[#eef8fb] rounded-full flex items-center justify-center text-[19px] cursor-pointer text-[#1389FF]'>

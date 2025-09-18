@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import SingleLatestProduct from '../common/SingleLatestProduct'
 import Slider from 'react-slick'
 import axios from 'axios'
 import SingleProducts from '../common/SingleProducts'

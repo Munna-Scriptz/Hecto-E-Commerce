@@ -4,6 +4,7 @@ import ShopHeader from '../components/shop/ShopHeader'
 import SingleShopProduct from '../components/common/SingleShopProduct'
 import Brands from '../components/Home/Brands'
 import axios from 'axios'
+import { useNavigate } from 'react-router'
 
 const Shop = () => {
   const [product , setProducts] = useState([])
@@ -14,7 +15,12 @@ const Shop = () => {
     .then((res)=>setProducts(res.data.products))
     .catch((err)=>console.log(err))
   } , [])
+  // ---------------------Redirect To Details 
+    const navigate = useNavigate()
 
+    const handleNav = (idNo)=>{
+      navigate(`/details/${idNo}`)
+    }
   return (
     <>
       <div className="container">
@@ -26,7 +32,7 @@ const Shop = () => {
           <div className='flex items-center gap-[53px] flex-wrap'>
             {
               product.map((item , i)=>(
-                <SingleShopProduct proImage={item.thumbnail} proName={item.title} proPrice={item.price} key={i}/>
+                <SingleShopProduct handleNav={()=>handleNav(item.id)} proImage={item.thumbnail} proName={item.title} proPrice={item.price} key={i}/>
               ))
             }
         </div>
