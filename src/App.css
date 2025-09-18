@@ -163,3 +163,9 @@
     border-radius: 10px;
     border: 1px solid #FB2E86;
 }
+
+@media (min-width: 320px) and (max-width: 768px) { 
+    .slider-Banner-container .slick-dots {
+        bottom: -35px !important;
+    }
+}

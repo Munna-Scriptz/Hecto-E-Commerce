@@ -3,7 +3,8 @@ import CommonHead from '../common/CommonHead'
 import SingleProducts from '../common/SingleProducts'
 import Slider from 'react-slick';
 import axios from 'axios';
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const Featured = () => {
    const settings = {
     infinite: true,
@@ -48,16 +49,6 @@ const Featured = () => {
       }
     ]
   };
-    // // ---------------Api--------------
-    // // ------Hooks 
-    // const [product , setProduct] = useState([])
-    // // ------Axios 
-    // useEffect(() => {
-    //     axios.get('https://api.escuelajs.co/api/v1/products/?categoryId=3')
-    //     .then((res)=>(setProduct(res.data)))
-    //     .catch((err)=>(console.log(err)))
-    // }, []);
-    // console.log(product)
      // ---------------Api--------------
     // ------Hooks 
     const [product , setProduct] = useState([])

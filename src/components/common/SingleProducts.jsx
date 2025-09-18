@@ -6,7 +6,7 @@ import { FaRegHeart } from "react-icons/fa";
 const SingleProducts = ({proImg , proName , ProDesc , proPrice}) => {
   return (
     <>
-    <div className='w-[270px]'>
+    <div className='lg:w-[270px] w-full'>
         {/* ---------Product Image------- */}
         <div className='w-full h-[236px] relative'>
             <div className='flex items-center gap-3 p-[11px] absolute top-[11px] left-[11px]'>
@@ -22,7 +22,7 @@ const SingleProducts = ({proImg , proName , ProDesc , proPrice}) => {
             <img src={proImg} alt="Product Image" />
         </div>
         {/* ---------Product Text------- */}
-        <div className='mt-[47px]'>
+        <div className='mt-[57px]'>
             <p className='text-brand text-lg font-bold font-lato line-clamp-1'>{proName}</p>
             <p className='text-subText font-medium font-lato mt-1 line-clamp-2'>{ProDesc}</p>
             <div className='flex items-center justify-between mt-4'>
