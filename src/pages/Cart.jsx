@@ -1,18 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import BreadCrumb from '../components/common/BreadCrumb'
 import CartLeftSide from '../components/cart/CartLeftSide'
 import CartRightSide from '../components/cart/CartRightSide'
+import axios from 'axios'
 
 const Cart = () => {
+  const [product , setProduct] = useState([])
+
+  const filteredId = JSON.parse(localStorage.getItem('productId')).map((item)=>{
+    return(
+      item
+    )
+  })
+  
   // ---------------Api--------------
-      // ------Hooks 
-      const [product , setProduct] = useState([])
-      // ------Axios 
-      useEffect(() => {
-          axios.get('https://dummyjson.com/products/category/furniture')
-          .then((res)=>(setProduct(res.data.products)))
-          .catch((err)=>(console.log(err)))
-      }, []);
+    // ------Axios 
+    useEffect(() => {
+      axios.get(`https://dummyjson.com/products/${filteredId}`)
+      .then((res)=>(setProduct(res.data)))
+      .catch((err)=>(console.log(err)))
+    }, []);
+
+  console.log(filteredId)
   return (
     <>
         <BreadCrumb pageName={'Shopping Cart'} to={'cart'} />
