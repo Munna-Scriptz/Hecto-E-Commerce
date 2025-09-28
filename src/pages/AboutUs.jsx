@@ -11,10 +11,10 @@ const AboutUs = () => {
   return (
     <>
     <section id='About-Us'>
+        {/* ---------BreadCrumb---------- */}
+        <BreadCrumb pageName={'About Us'} to={'about'}/>
         <div className="container">
             <div id="About-Us-Row">
-                {/* ---------BreadCrumb---------- */}
-                <BreadCrumb pageName={'About Us'} to={'about'}/>
                 {/* -----------About Page Details--------- */}
                 <div className='flex lg:flex-row flex-col items-center justify-between'>
                     <img src={AboutPageImg} alt="About Us Image" />

@@ -16,11 +16,11 @@ const Navbar = () => {
                     {/* ------NavIcons------ */}
                     <ul className='flex items-center gap-[35px] text-NavyBlue text-base '>
                         <li><Link id='UlHover' to={'/'}>Home</Link></li>
-                        <li><Link id='UlHover' to={'/products'}>Products</Link></li>
+                        <li><Link id='UlHover' to={'/details/2'}>Products</Link></li>
                         <li><Link id='UlHover' to={'/shop'}>Shop</Link></li>
                         <li><Link id='UlHover' to={'/blog'}>Blog</Link></li>
-                        <li><Link id='UlHover' to={'/faq'}>Faq</Link></li>
                         <li><Link id='UlHover' to={'/about'}>About</Link></li>
+                        <li><Link id='UlHover' to={'/contact'}>Contact</Link></li>
                     </ul>
                 </div>
                 <div className='w-[317px] h-[40px] flex items-center justify-between'>
