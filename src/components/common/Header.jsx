@@ -38,13 +38,10 @@ const Header = () => {
                         <p>Login</p>
                         <FaRegUser />
                     </div>
-                    <div className='text-brandWhite font-josefin font-semibold flex items-center gap-1 lg:text-base text-[14px] cursor-pointer'>
-                        <p>WhishList</p>
-                        <FaRegHeart />
-                    </div>
-                    <div className='text-brandWhite font-josefin font-semibold text-[20px] cursor-pointer hover:text-brand duration-[.3s]'>
-                        <MdOutlineShoppingCart />
-                    </div>
+                    <Link to={'/cart'} className='text-brandWhite font-josefin font-semibold flex items-center gap-1 lg:text-base text-[14px] cursor-pointer hover:text-brand duration-300'>
+                        <p>Cart</p>
+                        <MdOutlineShoppingCart className='text-xl'/>
+                    </Link>
                 </div>
             </div>
         </div>
