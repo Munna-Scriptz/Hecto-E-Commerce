@@ -9,7 +9,7 @@ const Cart = () => {
         <BreadCrumb pageName={'Shopping Cart'} to={'cart'} />
         <section id='Cart-Page' className='mt-[112px]'>
             <div className="container">
-                <div id="Cart-Page-Row" className='flex items-center justify-between'>
+                <div id="Cart-Page-Row" className='flex items-start justify-between'>
                     {/* --------------------Left side  -------------------- */}
                     <CartLeftSide />
                     {/* --------------------Right side --------------------  */}
