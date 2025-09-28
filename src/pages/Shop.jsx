@@ -23,12 +23,12 @@ const Shop = () => {
     }
   return (
     <>
+      <BreadCrumb pageName={'Shop'} to={'shop'}/>
       <div className="container">
-        <BreadCrumb pageName={'Shop'} to={'shop'}/>
         <ShopHeader/>
 
 
-        <div className="mt-[144px]">
+        <div className="mt-[64px]">
           <div className='flex items-center gap-[53px] flex-wrap'>
             {
               product.map((item , i)=>(

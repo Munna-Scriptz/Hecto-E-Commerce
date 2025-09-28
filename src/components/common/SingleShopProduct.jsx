@@ -7,16 +7,13 @@ const SingleShopProduct = ({proImage , proName , proPrice , ProDiscount , handle
         <div className='lg:w-[270px] w-full hover:bg-[#EBF4F3] pb-2 rounded-[5px] duration-300'>
             {/* ---------Product Image------- */}
             <div className='w-full h-[250px] relative'>
-                <div className='flex items-center flex-col gap-3 p-[11px] absolute bottom-[11px] left-[11px]'>
+                <div className='flex items-center flex-col gap-3 p-[11px] absolute top-[11px] left-[11px]'>
                     <div className='ShopButton w-[35px] h-[35px] bg-[#EEEFFB] rounded-full flex items-center justify-center text-[19px] cursor-pointer text-[#2F1AC4]'>
                         <GrCart />
                         <span className="tooltip font-poppins text-white">Cart</span>
                     </div>
                     <div onClick={handleNav} className='w-[35px] h-[35px] bg-[#eef8fb] rounded-full flex items-center justify-center text-[19px] cursor-pointer text-primary'>
                         <FaSearchPlus />
-                    </div>
-                    <div className='w-[35px] h-[35px] bg-[#eef8fb] rounded-full flex items-center justify-center text-[19px] cursor-pointer text-[#1389FF]'>
-                        <FaRegHeart />
                     </div>
                 </div>
                 <img src={proImage} alt="Product Image" />

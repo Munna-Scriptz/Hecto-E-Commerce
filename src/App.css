@@ -25,7 +25,7 @@
 .ShopButton .tooltip {
   position: absolute;
   top: 45px;
-  left: -6px;
+  left: 0px;
   opacity: 0;
   background-color: transparent;
   background-image: linear-gradient(147deg, #151875 0%, #151875 74%);
@@ -57,14 +57,14 @@
 .ShopButton:hover .tooltip {
     top: 55px;
     opacity: 1;
-    left: -6px;
+    left: 0px;
     transition-duration: 0.3s;
 }
 /* -------------WishList------------------ */
 .wishlist .WishlistTooltip {
   position: absolute;
   top: 45px;
-  left: 33px;
+  left: 43px;
   opacity: 0;
   background-color: transparent;
   background-image: linear-gradient(147deg, #1389FF 0%, #1389FF 74%);
@@ -96,7 +96,7 @@
 .wishlist:hover .WishlistTooltip {
     top: 55px;
     opacity: 1;
-    left: 33px;
+    left: 43px;
     transition-duration: 0.3s;
 }
 

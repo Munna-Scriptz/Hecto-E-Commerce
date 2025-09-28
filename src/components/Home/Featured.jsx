@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router';
 const Featured = () => {
    const settings = {
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 3,
     speed: 500,
     dots: true,
     autoplay: true,
@@ -50,7 +50,7 @@ const Featured = () => {
       }
     ]
   };
-     // ---------------Api--------------
+   // ---------------Api--------------
     // ------Hooks 
     const [product , setProduct] = useState([])
     // ------Axios 
