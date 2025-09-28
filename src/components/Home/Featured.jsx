@@ -66,6 +66,15 @@ const Featured = () => {
     const handleNav = (idNo)=>{
       navigate(`/details/${idNo}`)
     }
+
+    // ---------------------Add to cart 
+    const cartIds = JSON.parse(localStorage.getItem('productId')) || []
+
+    const handleCart = (e)=>{
+      cartIds.push(e)
+      localStorage.setItem('productId' , JSON.stringify(cartIds))
+    }
+    
   return (
     <>
     <section id='Featured' className='mt-[130px]'>
@@ -78,7 +87,7 @@ const Featured = () => {
                         <Slider {...settings}>
                             {
                                 product.map((item , i)=>(
-                                    <SingleProducts handleNav={()=> handleNav(item.id)} key={i} proImg={item.images[0]} proName={item.title} ProDesc={item.description} proPrice={item.price}/>
+                                    <SingleProducts addToCart={()=>handleCart(item.id)} handleNav={()=> handleNav(item.id)} key={i} proImg={item.images[0]} proName={item.title} ProDesc={item.description} proPrice={item.price}/>
                                 ))
                             }
                         </Slider>

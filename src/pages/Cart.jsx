@@ -4,6 +4,15 @@ import CartLeftSide from '../components/cart/CartLeftSide'
 import CartRightSide from '../components/cart/CartRightSide'
 
 const Cart = () => {
+  // ---------------Api--------------
+      // ------Hooks 
+      const [product , setProduct] = useState([])
+      // ------Axios 
+      useEffect(() => {
+          axios.get('https://dummyjson.com/products/category/furniture')
+          .then((res)=>(setProduct(res.data.products)))
+          .catch((err)=>(console.log(err)))
+      }, []);
   return (
     <>
         <BreadCrumb pageName={'Shopping Cart'} to={'cart'} />
