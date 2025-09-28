@@ -31,11 +31,11 @@ const CartLeftSide = () => {
             </div>
             {/* ---- Price , qty , total */}
             <h2 className='text-BlueText font-josefin'>$32.00</h2>
-              <div className='w-[70px] h-[20px] bg-[#BEBFC2] flex items-center justify-between'>
-                <button className='text-white bg-brand flex h-full cursor-pointer items-center justify-center w-[18px]'>-</button>
-                <p className='text-BlueText font-josefin'>1</p>
-                <button className='text-white bg-brand flex h-full cursor-pointer items-center justify-center w-[18px]'>+</button>
-              </div>
+            <div className='w-[70px] h-[20px] bg-[#BEBFC2] flex items-center justify-between'>
+              <button className='text-white bg-brand flex h-full cursor-pointer items-center justify-center w-[18px]'>-</button>
+              <p className='text-BlueText font-josefin'>1</p>
+              <button className='text-white bg-brand flex h-full cursor-pointer items-center justify-center w-[18px]'>+</button>
+            </div>
             <h2 className='text-BlueText font-josefin'>$32.00</h2>
           </div>
         </div>
