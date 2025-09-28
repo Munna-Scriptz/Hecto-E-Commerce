@@ -8,7 +8,7 @@ import { RiInstagramFill } from 'react-icons/ri'
 const BlogLeft = () => {
   return (
     <>
-        <div className='w-[870px] '>
+        <div className='w-[860px] '>
             {/* ---------------- BLog 1  */}
             <article>
                 <img src={blogImg1} alt="Blog Img" />
