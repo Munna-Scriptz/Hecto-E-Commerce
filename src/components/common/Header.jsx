@@ -1,13 +1,15 @@
 import React from 'react'
 import { MdOutlineEmail, MdOutlineShoppingCart } from "react-icons/md";
 import { FiPhoneCall } from "react-icons/fi";
-import { FaAngleDown, FaRegHeart } from "react-icons/fa6";
+import { FaAngleDown } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa";
 import { Link } from 'react-router';
+import { useSelector } from 'react-redux';
 
 
 
 const Header = () => {
+    const CartNum = useSelector((state)=>state.MyRedux.cartNum)
   return (
     <>
     <header className='bg-[#7E33E0] py-[14px]'>
@@ -43,7 +45,7 @@ const Header = () => {
                         <MdOutlineShoppingCart className='text-xl'/>
                         {/* ---------- Ping  */}
                         <div className='absolute -top-[6px] -right-[6px] bg-[#BA1A1A] w-[16px] h-[16px] rounded-full flex items-center justify-center font-lato text-white text-[10px]'>
-                            <span>2</span>
+                            <span>{CartNum.length}</span>
                         </div>
                     </Link>
                 </div>

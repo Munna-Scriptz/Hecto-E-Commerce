@@ -6,6 +6,8 @@ import axios from 'axios';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useNavigate } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { CartAllIds, CartNumbers } from '../../CartSlice';
 const Featured = () => {
    const settings = {
     infinite: true,
@@ -68,12 +70,23 @@ const Featured = () => {
     }
 
     // ----------------------------------- Add to cart 
-    const cartIds = JSON.parse(localStorage.getItem('productId')) || []
+    const dispatch = useDispatch();
 
-    const handleCart = (e)=>{
-      cartIds.push(e)
-      localStorage.setItem('productId' , JSON.stringify(cartIds))
-    }
+    useEffect(() => {
+      const ids = JSON.parse(localStorage.getItem('productId')) || [];
+      dispatch(CartAllIds(ids));
+      dispatch(CartNumbers(ids));
+    }, [dispatch]);
+
+    const handleCart = (e) => {
+      const cartIds = JSON.parse(localStorage.getItem('productId')) || [];
+      cartIds.push(e);
+      localStorage.setItem('productId', JSON.stringify(cartIds));
+      
+      dispatch(CartAllIds(cartIds));
+      dispatch(CartNumbers(cartIds));
+    };
+
     
   return (
     <>
