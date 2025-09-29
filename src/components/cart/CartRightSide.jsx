@@ -1,7 +1,13 @@
 import React from 'react'
 import { FaCheck } from 'react-icons/fa6'
 
-const CartRightSide = () => {
+const CartRightSide = ({products}) => {
+    
+  const totalPrice = products.reduce((sum , no)=>{
+    return sum + no.price
+  } , 0)
+
+  console.log(totalPrice)
   return (
     <>
         <main className='flex items-center flex-col'>
@@ -10,12 +16,12 @@ const CartRightSide = () => {
                 <div className='bg-[#F4F4FC] rounded-[4px] py-[34px] px-[24px]'>
                     <div className='flex items-center justify-between border-b-1 border-[#E8E6F1] pb-3'>
                         <h2 className='text-[#1D3178] text-lg font-semibold font-lato'>Subtotals:</h2>
-                        <h2 className='text-[#1D3178] text-lg font-semibold font-lato'>£219.00</h2>
+                        <h2 className='text-[#1D3178] text-lg font-semibold font-lato text-ellipsis w-17 whitespace-nowrap overflow-hidden'>${totalPrice}</h2>
                     </div>
 
                     <div className='flex items-center justify-between border-b-1 border-[#E8E6F1] pb-3 mt-[34px]'>
                         <h2 className='text-[#1D3178] text-lg font-semibold font-lato'>Totals:</h2>
-                        <h2 className='text-[#1D3178] text-lg font-semibold font-lato'>£325.00</h2>
+                        <h2 className='text-[#1D3178] text-lg font-semibold font-lato text-ellipsis w-17 whitespace-nowrap overflow-hidden'>${totalPrice + 60}</h2>
                     </div>
 
                     <div className='mt-[27px] flex items-center gap-3'>

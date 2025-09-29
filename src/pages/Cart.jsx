@@ -17,6 +17,7 @@ const Cart = () => {
       .then((res)=>(setProduct(res.data.products)))
       .catch((err)=>(console.log(err)))
     }, []);
+
   return (
     <>
         <BreadCrumb pageName={'Shopping Cart'} to={'cart'} />
@@ -26,7 +27,7 @@ const Cart = () => {
                     {/* --------------------Left side  -------------------- */}
                     <CartLeftSide products={filteredPro}/>
                     {/* --------------------Right side --------------------  */}
-                    <CartRightSide />
+                    <CartRightSide products={filteredPro} />
                 </div>
             </div>
         </section>
