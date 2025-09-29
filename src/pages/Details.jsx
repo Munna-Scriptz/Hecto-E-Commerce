@@ -8,6 +8,11 @@ import DetailsRelated from '../components/Details/DetailsRelated';
 import Brands from '../components/Home/Brands';
 import axios from 'axios';
 import { useParams } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { CartAllIds } from '../CartSlice';
+import { Bounce, toast } from 'react-toastify';
+
+
 const Details = () => {
     // ---------------------Api Work-------------------------
     const [product , setProduct] = useState([])
@@ -26,6 +31,33 @@ const Details = () => {
         product.thumbnail,
     ];
 
+    // ----------------------------------- Add to cart 
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+      const ids = JSON.parse(localStorage.getItem('productId')) || [];
+      dispatch(CartAllIds(ids));
+    }, [dispatch]);
+
+    const handleCart = (e) => {
+      const cartIds = JSON.parse(localStorage.getItem('productId')) || [];
+      cartIds.push(e);
+      localStorage.setItem('productId', JSON.stringify(cartIds));
+      
+      dispatch(CartAllIds(cartIds));
+
+      toast.success('Cart Added !', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+    });
+    };
   return (
     <>
         <BreadCrumb pageName={'Product Details'} to={'details'}/>
@@ -58,7 +90,7 @@ const Details = () => {
                     {/* ------------Add to Card  */}
                     <div className='flex items-center gap-[20px] mt-[34px]'>
                         <p className='text-primary font-josefin'>Add To cart</p>
-                        <div className='w-[30px] h-[30px] rounded-full flex items-center justify-center hover:bg-brand hover:text-white text-brand cursor-pointer duration-300'>
+                        <div onClick={()=>handleCart(product.id)} className='w-[30px] h-[30px] rounded-full flex items-center justify-center hover:bg-brand hover:text-white text-brand cursor-pointer duration-300'>
                             <FaRegHeart />
                         </div>
                     </div>

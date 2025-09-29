@@ -9,6 +9,8 @@ import product1 from '../../assets/images/BannerImg1.svg'
 import product2 from '../../assets/images/BannerImg1.svg'
 import product3 from '../../assets/images/BannerImg2.svg'
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { CartAllIds } from '../../CartSlice';
 
 const Trending = () => {
     const settings = {
@@ -70,6 +72,22 @@ const Trending = () => {
     const handleNav = (idNo)=>{
       navigate(`/details/${idNo}`)
     }
+
+    // ----------------------------------- Add to cart 
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+      const ids = JSON.parse(localStorage.getItem('productId')) || [];
+      dispatch(CartAllIds(ids));
+    }, [dispatch]);
+
+    const handleCart = (e) => {
+      const cartIds = JSON.parse(localStorage.getItem('productId')) || [];
+      cartIds.push(e);
+      localStorage.setItem('productId', JSON.stringify(cartIds));
+      
+      dispatch(CartAllIds(cartIds));
+    };
   return (
     <>
     <section id='Trending' className='mt-[130px]'>
@@ -82,7 +100,7 @@ const Trending = () => {
                         <Slider {...settings}>
                             {
                                 product.map((item, i)=>(
-                                    <SingleProducts handleNav={()=>handleNav(item.id)} key={i} proImg={item.thumbnail} proName={item.title} proPrice={item.price} ProDiscount={item.discountPercentage}/>
+                                    <SingleProducts addToCart={()=>handleCart(item.id)} handleNav={()=>handleNav(item.id)} key={i} proImg={item.thumbnail} proName={item.title} proPrice={item.price} ProDiscount={item.discountPercentage}/>
                                 ))
                             }
                         </Slider>

@@ -5,7 +5,8 @@ import SingleShopProduct from '../components/common/SingleShopProduct'
 import Brands from '../components/Home/Brands'
 import axios from 'axios'
 import { useNavigate } from 'react-router'
-
+import { useDispatch } from 'react-redux'
+import { CartAllIds } from '../CartSlice';
 const Shop = () => {
   const [product , setProducts] = useState([])
 
@@ -21,6 +22,22 @@ const Shop = () => {
     const handleNav = (idNo)=>{
       navigate(`/details/${idNo}`)
     }
+
+    // ----------------------------------- Add to cart 
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+      const ids = JSON.parse(localStorage.getItem('productId')) || [];
+      dispatch(CartAllIds(ids));
+    }, [dispatch]);
+
+    const handleCart = (e) => {
+      const cartIds = JSON.parse(localStorage.getItem('productId')) || [];
+      cartIds.push(e);
+      localStorage.setItem('productId', JSON.stringify(cartIds));
+      
+      dispatch(CartAllIds(cartIds));
+    };
   return (
     <>
       <BreadCrumb pageName={'Shop'} to={'shop'}/>
@@ -32,7 +49,7 @@ const Shop = () => {
           <div className='flex items-center gap-[53px] flex-wrap'>
             {
               product.map((item , i)=>(
-                <SingleShopProduct handleNav={()=>handleNav(item.id)} proImage={item.thumbnail} proName={item.title} proPrice={item.price} key={i}/>
+                <SingleShopProduct handleCart={()=>handleCart(item.id)} handleNav={()=>handleNav(item.id)} proImage={item.thumbnail} proName={item.title} proPrice={item.price} key={i}/>
               ))
             }
         </div>
