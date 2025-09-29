@@ -6,22 +6,17 @@ import axios from 'axios'
 
 const Cart = () => {
   const [product , setProduct] = useState([])
+  const Ids = JSON.parse(localStorage.getItem("productId")) || [];
 
-  const filteredId = JSON.parse(localStorage.getItem('productId')).map((item)=>{
-    return(
-      item
-    )
+  const filteredPro = product.filter((item)=>{
+    return Ids.includes(item.id)
   })
-  
   // ---------------Api--------------
-    // ------Axios 
     useEffect(() => {
-      axios.get(`https://dummyjson.com/products/${filteredId}`)
-      .then((res)=>(setProduct(res.data)))
+      axios.get(`https://dummyjson.com/products/`)
+      .then((res)=>(setProduct(res.data.products)))
       .catch((err)=>(console.log(err)))
     }, []);
-
-  console.log(filteredId)
   return (
     <>
         <BreadCrumb pageName={'Shopping Cart'} to={'cart'} />
@@ -29,7 +24,7 @@ const Cart = () => {
             <div className="container">
                 <div id="Cart-Page-Row" className='flex items-start justify-between'>
                     {/* --------------------Left side  -------------------- */}
-                    <CartLeftSide />
+                    <CartLeftSide products={filteredPro}/>
                     {/* --------------------Right side --------------------  */}
                     <CartRightSide />
                 </div>
