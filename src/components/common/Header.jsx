@@ -38,9 +38,13 @@ const Header = () => {
                         <p>Login</p>
                         <FaRegUser />
                     </div>
-                    <Link to={'/cart'} className='text-brandWhite font-josefin font-semibold flex items-center gap-1 lg:text-base text-[14px] cursor-pointer hover:text-brand duration-300'>
+                    <Link to={'/cart'} className='text-brandWhite relative font-josefin font-semibold flex items-center gap-1 lg:text-base text-[14px] cursor-pointer hover:text-brand duration-300'>
                         <p>Cart</p>
                         <MdOutlineShoppingCart className='text-xl'/>
+                        {/* ---------- Ping  */}
+                        <div className='absolute -top-[6px] -right-[6px] bg-[#BA1A1A] w-[16px] h-[16px] rounded-full flex items-center justify-center font-lato text-white text-[10px]'>
+                            <span>2</span>
+                        </div>
                     </Link>
                 </div>
             </div>

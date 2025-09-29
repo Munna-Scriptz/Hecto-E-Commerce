@@ -7,7 +7,6 @@ const CartRightSide = ({products}) => {
     return sum + no.price
   } , 0)
 
-  console.log(totalPrice)
   return (
     <>
         <main className='flex items-center flex-col'>

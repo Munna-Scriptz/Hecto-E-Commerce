@@ -67,7 +67,7 @@ const Featured = () => {
       navigate(`/details/${idNo}`)
     }
 
-    // ---------------------Add to cart 
+    // ----------------------------------- Add to cart 
     const cartIds = JSON.parse(localStorage.getItem('productId')) || []
 
     const handleCart = (e)=>{
