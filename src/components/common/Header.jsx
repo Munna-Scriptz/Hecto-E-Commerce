@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 
 
 const Header = () => {
-    const CartNum = useSelector((state)=>state.MyRedux.cartNum)
+    const CartNum = useSelector((state)=>state.MyRedux.value)
   return (
     <>
     <header className='bg-[#7E33E0] py-[14px]'>

@@ -3,6 +3,8 @@ import CommonHead from '../common/CommonHead'
 import SingleLatestProduct from '../common/SingleLatestProduct'
 import axios from 'axios'
 import { useNavigate } from 'react-router'
+import { useDispatch } from 'react-redux'
+import { CartAllIds } from '../../CartSlice'
 
 const LatestProduct = () => {
     // ---------------Api--------------
@@ -37,6 +39,23 @@ const LatestProduct = () => {
     const handleNav = (idNo)=>{
       navigate(`/details/${idNo}`)
     }
+
+    // ----------------------------------- Add to cart 
+    const dispatch = useDispatch();
+    
+    useEffect(() => {
+      const ids = JSON.parse(localStorage.getItem('productId')) || [];
+      dispatch(CartAllIds(ids));
+    }, [dispatch]);
+
+    const handleCart = (e) => {
+      const cartIds = JSON.parse(localStorage.getItem('productId')) || [];
+      cartIds.push(e);
+      localStorage.setItem('productId', JSON.stringify(cartIds));
+      
+      dispatch(CartAllIds(cartIds));
+    };
+    
   return (
     <>
     <section id='LatestProduct' className='mt-[130px]'>
@@ -56,7 +75,7 @@ const LatestProduct = () => {
                 <div className='mt-[62px] flex items-center justify-between flex-wrap gap-y-[120px]'>
                     {
                         product.slice(page * itemsPerPage, (page + 1) * itemsPerPage).map((item, i)=>(
-                            <SingleLatestProduct handleNav={()=>handleNav(item.id)} key={i} proImage={item.thumbnail} proName={item.title} proPrice={item.price} ProDiscount={item.discountPercentage}/>
+                            <SingleLatestProduct handleCart={()=>handleCart(item.id)} handleNav={()=>handleNav(item.id)} key={i} proImage={item.thumbnail} proName={item.title} proPrice={item.price} ProDiscount={item.discountPercentage}/>
                         ))
                     }
                 </div>

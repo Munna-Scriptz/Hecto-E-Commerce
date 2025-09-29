@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
-import { CartAllIds, CartNumbers } from '../../CartSlice';
+import { CartAllIds } from '../../CartSlice';
 const Featured = () => {
    const settings = {
     infinite: true,
@@ -75,7 +75,6 @@ const Featured = () => {
     useEffect(() => {
       const ids = JSON.parse(localStorage.getItem('productId')) || [];
       dispatch(CartAllIds(ids));
-      dispatch(CartNumbers(ids));
     }, [dispatch]);
 
     const handleCart = (e) => {
@@ -84,7 +83,6 @@ const Featured = () => {
       localStorage.setItem('productId', JSON.stringify(cartIds));
       
       dispatch(CartAllIds(cartIds));
-      dispatch(CartNumbers(cartIds));
     };
 
     

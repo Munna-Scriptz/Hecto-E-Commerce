@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router'
 import LayoutOne from './layout/LayoutOne'
@@ -9,8 +9,17 @@ import Details from './pages/Details'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import Cart from './pages/Cart'
+import { ToastContainer } from 'react-toastify'
+import { useDispatch } from 'react-redux'
+import { CartAllIds } from './CartSlice'
 
 const App = () => {
+  // ------------Auto Cart Data loads 
+  const dispatch = useDispatch()
+  useEffect(() => {
+      const ids = JSON.parse(localStorage.getItem('productId')) || [];
+      dispatch(CartAllIds(ids));
+    }, [dispatch]);
 
   const MyRoute = createBrowserRouter(createRoutesFromElements(
     <Route>
@@ -28,6 +37,7 @@ const App = () => {
 
   return (
     <>
+      <ToastContainer />
       <RouterProvider router={MyRoute}></RouterProvider>
     </>
   )

@@ -1,15 +1,29 @@
 import React from 'react'
 import { FaSearchPlus, FaStar } from "react-icons/fa";
 import { GrCart } from "react-icons/gr";
+import { Bounce, toast } from 'react-toastify';
 
 const SingleProducts = ({proImg , proName , ProDesc , proPrice , handleNav , addToCart}) => {
+    const handleToast = ()=>{
+        toast.success('Cart Added !', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+        });
+    }
   return (
     <>
     <div className='lg:w-[270px] w-full mx-auto'>
         {/* ---------Product Image------- */}
         <div className='w-full h-[236px] relative'>
             <div className='flex items-center gap-3 p-[11px] absolute top-[11px] left-[11px]'>
-                <div onClick={addToCart} className='ShopButton w-[35px] h-[35px] bg-[#EEEFFB] rounded-full flex items-center justify-center text-[19px] cursor-pointer text-[#2F1AC4]'>
+                <div onClick={()=>{addToCart(), handleToast()}} className='ShopButton w-[35px] h-[35px] bg-[#EEEFFB] rounded-full flex items-center justify-center text-[19px] cursor-pointer text-[#2F1AC4]'>
                     <GrCart />
                     <span className="tooltip font-poppins text-white">Cart</span>
                 </div>

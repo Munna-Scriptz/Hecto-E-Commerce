@@ -3,10 +3,11 @@ import BreadCrumb from '../components/common/BreadCrumb'
 import CartLeftSide from '../components/cart/CartLeftSide'
 import CartRightSide from '../components/cart/CartRightSide'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 const Cart = () => {
   const [product , setProduct] = useState([])
-  const Ids = JSON.parse(localStorage.getItem("productId")) || [];
+  const Ids = useSelector(state => state.MyRedux.value)
 
   const filteredPro = product.filter((item)=>{
     return Ids.includes(item.id)

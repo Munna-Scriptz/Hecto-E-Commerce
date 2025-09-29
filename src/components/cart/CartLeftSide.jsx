@@ -1,7 +1,30 @@
 import React from 'react'
 import { RxCross2 } from 'react-icons/rx'
+import { useDispatch } from 'react-redux';
+import { CartAllIds } from '../../CartSlice';
+import { Bounce, toast } from 'react-toastify';
 
 const CartLeftSide = ({products}) => {
+  // ----------------Delete products 
+  const dispatch = useDispatch()
+  let arrId = JSON.parse(localStorage.getItem("productId")) || [];
+
+  const handleDlt = (e)=>{
+   const removedList = arrId.filter(item => item !== e)
+   localStorage.setItem('productId', JSON.stringify(removedList))
+   dispatch(CartAllIds(removedList))
+   toast.success('Product Deleted', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+    transition: Bounce,
+  });
+  }
   return (
     <>
       <section className='w-[725px]'>
@@ -20,7 +43,7 @@ const CartLeftSide = ({products}) => {
               <div className='relative'>
                 <img src={item.thumbnail} className='w-[140px]' alt="Cart Product" />
                 {/* ---------- Remove Button  */}
-                <div className='absolute -top-2 -right-2 w-4 h-4 bg-black rounded-full text-[13px] cursor-pointer hover:bg-red-600 duration-300 flex items-center justify-center text-white'>
+                <div onClick={()=>handleDlt(item.id)} className='absolute -top-2 -right-2 w-4 h-4 bg-black rounded-full text-[13px] cursor-pointer hover:bg-red-600 duration-300 flex items-center justify-center text-white'>
                   <RxCross2 />
                 </div>
               </div>
