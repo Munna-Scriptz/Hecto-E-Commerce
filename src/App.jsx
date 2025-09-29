@@ -12,6 +12,7 @@ import Cart from './pages/Cart'
 import { ToastContainer } from 'react-toastify'
 import { useDispatch } from 'react-redux'
 import { CartAllIds } from './CartSlice'
+import Complete from './pages/Complete'
 
 const App = () => {
   // ------------Auto Cart Data loads 
@@ -27,6 +28,7 @@ const App = () => {
         <Route index element={<Home/>}></Route>
         <Route path='/about' element={<AboutUs/>}></Route>
         <Route path='/blog' element={<Blog/>}></Route>
+        <Route path='/complete' element={<Complete/>}></Route>
         <Route path='/contact' element={<Contact/>}></Route>
         <Route path='/shop' element={<Shop/>}></Route>
         <Route path='/cart' element={<Cart/>}></Route>

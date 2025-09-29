@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaCheck } from 'react-icons/fa6'
 
 const CartRightSide = ({products}) => {
@@ -7,6 +7,13 @@ const CartRightSide = ({products}) => {
     return sum + no.price
   } , 0)
 
+    //   --------------------- Complete validations 
+    const [place , setPlace] = useState({
+        location: ''
+    })
+    const handleComplete = ()=>{
+        console.log('Hello')
+    }
   return (
     <>
         <main className='flex items-center flex-col'>
