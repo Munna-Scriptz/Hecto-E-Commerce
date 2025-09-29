@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { FaCheck } from 'react-icons/fa6'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router'
+import { CartAllIds } from '../../CartSlice'
 
 const CartRightSide = ({products}) => {
     
@@ -7,17 +10,33 @@ const CartRightSide = ({products}) => {
     return sum + no.price
   } , 0)
 
+    //   -------------------Hide Checkout 
+    const [checkout , hideCheckout] = useState(true)
+
     //   --------------------- Complete validations 
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
     const [place , setPlace] = useState({
-        location: ''
+        location: '',
+        currentLoc: '',
+        postalCode: '',
+        PlaceError: ''
     })
+
     const handleComplete = ()=>{
-        console.log('Hello')
+        if(!place.location || !place.currentLoc || !place.postalCode) return setPlace((prev)=>({...prev , PlaceError : 'Please Fill all the inputs *' }))
+            setTimeout(() => {
+                navigate('/complete')
+            }, 1000);
+        localStorage.removeItem('productId')
+        dispatch(CartAllIds([]))
+    
     }
   return (
     <>
         <main className='flex items-center flex-col'>
-            <section className='w-[370px]'>
+            <section className={`${checkout? '' : 'hidden'} w-[370px]`}>
                 <h2 className='text-center text-[#1D3178] font-josefin font-bold text-xl mb-10'>Cart Totals</h2>
                 <div className='bg-[#F4F4FC] rounded-[4px] py-[34px] px-[24px]'>
                     <div className='flex items-center justify-between border-b-1 border-[#E8E6F1] pb-3'>
@@ -37,19 +56,20 @@ const CartRightSide = ({products}) => {
                         <p className='text-subText font-lato text-xs '>Shipping & taxes calculated at checkout</p>
                     </div>
 
-                    <button className='mt-[35px] w-full py-3 bg-[#19D16F] text-white font-lato font-bold text-sm cursor-pointer hover:bg-BlueText duration-300 rounded-[4px]'>Proceed To Checkout</button>
+                    <button onClick={()=>hideCheckout(!checkout)} className='mt-[35px] w-full py-3 bg-[#19D16F] text-white font-lato font-bold text-sm cursor-pointer hover:bg-BlueText duration-300 rounded-[4px]'>Proceed To Checkout</button>
                 </div>
             </section>
 
-            <section className='w-[370px] mt-[32px]'>
+            <section className={`${checkout? 'hidden' : ''} w-[370px]`}>
                 <h2 className='text-center text-[#1D3178] font-josefin font-bold text-xl mb-10'>Calculate Shopping</h2>
                 <div className='bg-[#F4F4FC] rounded-[4px] py-[34px] px-[24px]'>
+                    <h2 className='text-center text-red-500 font-josefin mb-5'>{place.PlaceError}</h2>
                     <div>
-                        <input className='border-b-1 border-[#C7CEE4] font-josefin text-base text-subText w-full h-[30px] outline-none' placeholder='Bangladesh' type="text"/>
-                        <input className='border-b-1 border-[#C7CEE4] font-josefin text-base text-subText w-full h-[30px] outline-none mt-[38px]' placeholder='Uttara Dhaka - 1200' type="text"/>
-                        <input className='border-b-1 border-[#C7CEE4] font-josefin text-base text-subText w-full h-[30px] outline-none mt-[38px]' placeholder='Postal Code' type="text"/>
+                        <input onChange={(e)=>setPlace((prev)=>({...prev , location: e.target.value, PlaceError: ''}))} className='border-b-1 border-[#C7CEE4] font-josefin text-base text-subText w-full h-[30px] outline-none' placeholder='Bangladesh' type="text"/>
+                        <input onChange={(e)=>setPlace((prev)=>({...prev , currentLoc: e.target.value, PlaceError: ''}))} className='border-b-1 border-[#C7CEE4] font-josefin text-base text-subText w-full h-[30px] outline-none mt-[38px]' placeholder='Uttara Dhaka - 1200' type="text"/>
+                        <input onChange={(e)=>setPlace((prev)=>({...prev , postalCode: e.target.value, PlaceError: ''}))} className='border-b-1 border-[#C7CEE4] font-josefin text-base text-subText w-full h-[30px] outline-none mt-[38px]' placeholder='Postal Code' type="text"/>
                     </div>
-                    <button className='mt-[35px] w-full py-3 bg-brand text-white font-lato font-bold text-sm cursor-pointer hover:bg-BlueText duration-300 rounded-[4px]'>Proceed To Checkout</button>
+                    <button onClick={handleComplete} className='mt-[35px] w-full py-3 bg-brand text-white font-lato font-bold text-sm cursor-pointer hover:bg-BlueText duration-300 rounded-[4px]'>Proceed To Checkout</button>
                 </div>
             </section>
         </main>

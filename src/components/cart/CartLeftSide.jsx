@@ -13,6 +13,7 @@ const CartLeftSide = ({products}) => {
    const removedList = arrId.filter(item => item !== e)
    localStorage.setItem('productId', JSON.stringify(removedList))
    dispatch(CartAllIds(removedList))
+   
    toast.success('Product Deleted', {
     position: "top-right",
     autoClose: 5000,
