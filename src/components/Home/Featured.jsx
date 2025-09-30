@@ -11,6 +11,7 @@ import { CartAllIds } from '../../CartSlice';
 const Featured = () => {
    const settings = {
     infinite: true,
+    arrows: false,
     slidesToShow: 3,
     speed: 500,
     dots: true,

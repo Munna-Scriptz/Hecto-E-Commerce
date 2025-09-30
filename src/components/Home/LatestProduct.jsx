@@ -72,7 +72,7 @@ const LatestProduct = () => {
                     </ul>
                 </div>
                 {/* ----------Latest Products--------- */}
-                <div className='mt-[62px] flex items-center justify-between flex-wrap gap-y-[120px]'>
+                <div className='mt-[62px] flex items-center justify-between flex-wrap lg:gap-y-[120px] gap-y-[60px]'>
                     {
                         product.slice(page * itemsPerPage, (page + 1) * itemsPerPage).map((item, i)=>(
                             <SingleLatestProduct handleCart={()=>handleCart(item.id)} handleNav={()=>handleNav(item.id)} key={i} proImage={item.thumbnail} proName={item.title} proPrice={item.price} ProDiscount={item.discountPercentage}/>

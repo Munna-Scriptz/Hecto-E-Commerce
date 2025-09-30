@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 
 
 const Header = () => {
-    const CartNum = useSelector((state)=>state.MyRedux.value)
+    const CartNum = useSelector((state)=>state.MyRedux.value    )
   return (
     <>
     <header className='bg-[#7E33E0] py-[14px]'>
@@ -27,7 +27,7 @@ const Header = () => {
                     </Link>
                 </div>
                 {/* -------Functions------ */}
-                <div className='flex items-center lg:justify-start justify-around lg:gap-[18px] gap-[14px]'>
+                <div className='flex items-center lg:justify-start justify-around lg:w-auto w-full lg:gap-[18px] gap-[14px]'>
                     <div className='text-brandWhite font-josefin font-semibold flex items-center gap-1 lg:text-base text-[14px] cursor-pointer'>
                         <p>English</p>
                         <FaAngleDown />
