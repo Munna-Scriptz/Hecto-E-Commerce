@@ -27,17 +27,17 @@ const Cart = () => {
     <>
         <BreadCrumb pageName={'Shopping Cart'} to={'cart'} />
         <Loading turnOff={loader}/>
-        <section id='Cart-Page' className='mt-[112px]'>
+        <section id='Cart-Page' className='lg:mt-[112px] mt-[0px]'>
             <div className="container">
               {
                 filteredPro.length == 0?
                 <div className='flex flex-col items-center justify-center'>
                   <img className='w-[600px]' src={noProImg} alt="No Product Added yet..." />
-                  <h2 className='text-BlueText text-[32px] font-josefin mt-4'>No products added yet...</h2>
-                  <Link className='bg-brand text-white inline-block py-[12px] px-[32px] rounded-[4px] font-josefin hover:bg-subText duration-300' to={'/shop'}>Back to Shop</Link>
+                  <h2 className='text-BlueText md:text-[32px] text-2xl font-josefin mt-4'>No products added yet...</h2>
+                  <Link className='bg-brand text-white mt-4 inline-block py-[12px] px-[32px] rounded-[4px] font-josefin hover:bg-subText duration-300' to={'/shop'}>Back to Shop</Link>
                 </div>
                 :
-                <div id="Cart-Page-Row" className='flex items-start justify-between'>
+                <div id="Cart-Page-Row" className='flex lg:flex-row flex-col items-start justify-between'>
                     {/* --------------------Left side  -------------------- */}
                     <CartLeftSide products={filteredPro}/>
                     {/* --------------------Right side --------------------  */}

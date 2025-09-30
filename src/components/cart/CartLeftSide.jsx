@@ -28,9 +28,9 @@ const CartLeftSide = ({products}) => {
   }
   return (
     <>
-      <section className='w-[725px]'>
+      <section className='lg:w-[725px] w-full'>
         {/* ------------------------ Header ---------------------------- */}
-        <div className='text-[#1D3178] text-xl font-josefin font-bold flex items-center'>
+        <div className='text-[#1D3178] text-xl font-josefin font-bold items-center lg:flex hidden'>
           <h2 className='mr-[320px]'>Product</h2>
           <h2 className='mr-[54px]'>Price</h2>
           <h2 className='ml-[25px]'>Quantity</h2>
@@ -49,14 +49,14 @@ const CartLeftSide = ({products}) => {
                 </div>
               </div>
               {/* ----------------- cart Other details  */}
-              <div className='flex items-center justify-between w-full'>
+              <div className='flex lg:flex-row flex-col lg:items-center gap-y-4 justify-between w-full'>
                 <div>
                   <h2 className='text-[#000] font-josefin text-base text-ellipsis overflow-hidden whitespace-nowrap w-[180px]'>{item.title}</h2>
                   <p className='text-subText text-sm mt-1.5'>Color brown</p>
                   <p className='text-subText text-sm mt-1.5'>Size: XL</p>
                 </div>
                 {/* ---- Price , qty , total */}
-                <h2 className='text-BlueText font-josefin'>${item.price}</h2>
+                <h2 className='text-BlueText font-josefin lg:block hidden'>${item.price}</h2>
                 <div className='w-[70px] h-[20px] bg-[#BEBFC2] flex items-center justify-between'>
                   <button className='text-white bg-brand flex h-full cursor-pointer items-center justify-center w-[18px]'>-</button>
                   <p className='text-BlueText font-josefin'>1</p>

@@ -39,8 +39,8 @@ const [loader , setLoader] = useState(true)
   return (
     <>
         <Loading turnOff={loader}/>
-        <main className='flex items-center flex-col'>
-            <section className={`${checkout? '' : 'hidden'} w-[370px]`}>
+        <main className='flex items-center flex-col lg:w-auto w-full lg:mt-0 mt-10'>
+            <section className={`${checkout? '' : 'hidden'} lg:w-[370px] w-full`}>
                 <h2 className='text-center text-[#1D3178] font-josefin font-bold text-xl mb-10'>Cart Totals</h2>
                 <div className='bg-[#F4F4FC] rounded-[4px] py-[34px] px-[24px]'>
                     <div className='flex items-center justify-between border-b-1 border-[#E8E6F1] pb-3'>
@@ -64,7 +64,7 @@ const [loader , setLoader] = useState(true)
                 </div>
             </section>
 
-            <section className={`${checkout? 'hidden' : ''} w-[370px]`}>
+            <section className={`${checkout? 'hidden' : ''} lg:w-[370px] w-full`}>
                 <h2 className='text-center text-[#1D3178] font-josefin font-bold text-xl mb-10'>Calculate Shopping</h2>
                 <div className='bg-[#F4F4FC] rounded-[4px] py-[34px] px-[24px]'>
                     <h2 className='text-center text-red-500 font-josefin mb-5'>{place.PlaceError}</h2>
