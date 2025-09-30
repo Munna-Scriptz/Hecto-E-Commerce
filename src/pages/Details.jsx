@@ -67,11 +67,11 @@ const Details = () => {
 
         {/* -------------------Product Details */}
         <div className='container'>
-            <div className='flex items-center justify-between'>
-                <div className='w-[700px]'>
+            <div className='flex lg:flex-row flex-col items-center justify-between'>
+                <div className='lg:w-[700px] w-full'>
                     <ProductSlide images={images} settings={{ direction: "vertical", zoom: true, thumbnailPosition: "left", transitionDuration: 300,}}/>
                 </div>
-                <div className='w-[560px]'>
+                <div className='lg:w-[560px] w-full'>
                     <h2 className='text-primary text-4xl font-semibold mb-3 font-josefin'>{product.title}</h2>
                     <div className='flex items-center gap-2'>
                         <div className='flex items-center gap-1 text-[#FFC416] text-[10px]'>
@@ -110,7 +110,7 @@ const Details = () => {
         {/* -------------------Product Texts */}
         <DetailsText/>
         {/* -------------------Related Products */}
-        <div className='mt-[240px]'>
+        <div className='lg:mt-[240px] mt-[120px]'>
             <DetailsRelated/>
         </div>
         {/* -------------------Brands */}

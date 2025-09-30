@@ -7,6 +7,7 @@ import SingleProducts from '../common/SingleProducts'
 const DetailsRelated = () => {
     const settings = {
     infinite: true,
+    arrows: false,
     slidesToShow: 3,
     speed: 500,
     dots: true,
@@ -61,7 +62,7 @@ const DetailsRelated = () => {
         <section id='Related-Products'>
             <div className="container">
                 <div id="Related-Products-Row">
-                    <h2 className='text-primary text-4xl font-bold mb-[47px]'>Related Products</h2>
+                    <h2 className='text-primary lg:text-4xl text-2xl font-bold mb-[47px]'>Related Products</h2>
                     {/* --------------Cards------------------ */}
                     <div className='slider-Featured-container'>
                         <Slider {...settings}>

@@ -9,7 +9,7 @@ const Blog = () => {
         <BreadCrumb pageName={'Blog'} to={'blog'} />
 
         <div className="container">
-            <div id="Blog-Row" className='flex gap-[30px]'>
+            <div id="Blog-Row" className='flex lg:flex-row flex-col gap-[30px]'>
                 {/* --------------------Left Side---------------------- */}
                 <BlogLeft />
                 {/* --------------------Right Side---------------------- */}
