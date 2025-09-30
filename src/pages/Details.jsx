@@ -11,18 +11,20 @@ import { useParams } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { CartAllIds } from '../CartSlice';
 import { Bounce, toast } from 'react-toastify';
+import Loading from '../components/common/Loading';
 
 
 const Details = () => {
     // ---------------------Api Work-------------------------
+    const [loader , setLoader] = useState(false)
     const [product , setProduct] = useState([])
     const params = useParams()
 
     useEffect(()=>{
         axios.get(`https://dummyjson.com/products/${params.productID}`)
-        .then((res)=>setProduct(res.data))
+        .then((res)=>(setProduct(res.data) , setLoader(true)))
         .catch((err)=>console.log(err))
-    }, [])
+    }, [params])
 
     // ---------------------Images-------------------------
     const images = [
@@ -61,6 +63,7 @@ const Details = () => {
   return (
     <>
         <BreadCrumb pageName={'Product Details'} to={'details'}/>
+        <Loading turnOff={loader}/>
 
         {/* -------------------Product Details */}
         <div className='container'>
