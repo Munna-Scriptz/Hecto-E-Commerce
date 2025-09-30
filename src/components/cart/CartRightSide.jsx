@@ -3,9 +3,10 @@ import { FaCheck } from 'react-icons/fa6'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { CartAllIds } from '../../CartSlice'
+import Loading from '../common/Loading'
 
 const CartRightSide = ({products}) => {
-    
+const [loader , setLoader] = useState(true)
   const totalPrice = products.reduce((sum , no)=>{
     return sum + no.price
   } , 0)
@@ -28,13 +29,16 @@ const CartRightSide = ({products}) => {
         if(!place.location || !place.currentLoc || !place.postalCode) return setPlace((prev)=>({...prev , PlaceError : 'Please Fill all the inputs *' }))
             setTimeout(() => {
                 navigate('/complete')
-            }, 1000);
-        localStorage.removeItem('productId')
-        dispatch(CartAllIds([]))
+                setLoader(true)
+                localStorage.removeItem('productId')
+                dispatch(CartAllIds([]))
+            }, 3000);
+        setLoader(false)
     
     }
   return (
     <>
+        <Loading turnOff={loader}/>
         <main className='flex items-center flex-col'>
             <section className={`${checkout? '' : 'hidden'} w-[370px]`}>
                 <h2 className='text-center text-[#1D3178] font-josefin font-bold text-xl mb-10'>Cart Totals</h2>

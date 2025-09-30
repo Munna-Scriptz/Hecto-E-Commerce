@@ -6,7 +6,9 @@ import axios from 'axios'
 import { useSelector } from 'react-redux'
 import noProImg from '../../src/assets/images/noProFound.png'
 import { Link } from 'react-router'
+import Loading from '../components/common/Loading'
 const Cart = () => {
+  const [loader , setLoader] = useState(false)
   const [product , setProduct] = useState([])
   const Ids = useSelector(state => state.MyRedux.value)
 
@@ -17,13 +19,14 @@ const Cart = () => {
   // ---------------Api--------------
     useEffect(() => {
       axios.get(`https://dummyjson.com/products/`)
-      .then((res)=>(setProduct(res.data.products)))
+      .then((res)=>(setProduct(res.data.products) , setLoader(true)))
       .catch((err)=>(console.log(err)))
     }, []);
 
   return (
     <>
         <BreadCrumb pageName={'Shopping Cart'} to={'cart'} />
+        <Loading turnOff={loader}/>
         <section id='Cart-Page' className='mt-[112px]'>
             <div className="container">
               {

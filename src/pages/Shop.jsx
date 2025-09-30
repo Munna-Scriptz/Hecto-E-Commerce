@@ -7,13 +7,15 @@ import axios from 'axios'
 import { useNavigate } from 'react-router'
 import { useDispatch } from 'react-redux'
 import { CartAllIds } from '../CartSlice';
+import Loading from '../components/common/Loading'
 const Shop = () => {
+  const [loader , setLoader] = useState(false)
   const [product , setProducts] = useState([])
 
 
   useEffect(()=>{
     axios.get('https://dummyjson.com/products')
-    .then((res)=>setProducts(res.data.products))
+    .then((res)=>setProducts(res.data.products) , setLoader(true))
     .catch((err)=>console.log(err))
   } , [])
   // ---------------------Redirect To Details 
@@ -41,6 +43,7 @@ const Shop = () => {
   return (
     <>
       <BreadCrumb pageName={'Shop'} to={'shop'}/>
+      <Loading turnOff={loader}/>
       <div className="container">
         <ShopHeader/>
 
