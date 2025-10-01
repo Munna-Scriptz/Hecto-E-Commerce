@@ -55,7 +55,7 @@ const Banner = () => {
     };
   return (
     <>
-    <section id='Banner' className='bg-[#F2F0FF] mt-[19px] py-[36px]'>
+    <section id='Banner' className='bg-[#F2F0FF] md:mt-[19px] py-[36px]'>
         <div className="container">
             <div className="Banner-Row relative">
                 {/* -------------Slider------------- */}

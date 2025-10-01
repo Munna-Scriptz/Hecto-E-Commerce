@@ -3,6 +3,7 @@ import Logo from '../../assets/images/Logo.svg'
 import { Link, useNavigate } from 'react-router'
 import { IoSearchOutline } from "react-icons/io5";
 import axios from 'axios';
+import searchEmpty from '../../../src/assets/images/noProFound.png'
 
 const Navbar = () => {
     const [search , setSearch] = useState('')
@@ -58,9 +59,10 @@ const Navbar = () => {
             {/* ---------Search items--------- */}
             <div className={`${search == ''? 'hidden' : ''} bg-[#F6F5FF] absolute top-30 right-[30px] w-[600px] h-auto max-h-[600px] px-[24px] py-[32px] z-10 rounded-md overflow-y-scroll shadow-[0_3px_10px_rgb(0,0,0,0.2)]`}>
               {/* ------------SearchError---------- */}
-                {/* <div className='flex items-center justify-center mt-[100px]'>
-                  <img className='w-[350px]' src='' alt="Sorry no Product Founded :(" />
-                </div> */}
+                <div className={`${filProduct == 0? '' : 'hidden'} flex flex-col gap-6 items-center justify-center`}>
+                  <img className='w-[350px]' src={searchEmpty} alt="Sorry no Product Founded :(" />
+                  <p className='text-xl text-BlueText font-josefin'>Sorry No products founded :(</p>
+                </div>
                 {
                     filProduct.map((item , i)=>(
                         <div onClick={()=>{handleNav(item.id), setSearch('')}} key={i} className='flex items-center gap-5 border-b-1 border-subText py-3 duration-[.2s] hover:bg-[#cacccf] cursor-pointer'>

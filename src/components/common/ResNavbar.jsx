@@ -1,20 +1,53 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Logo from '../../assets/images/Logo.svg'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import { FaBarsStaggered } from 'react-icons/fa6';
-import { IoHomeOutline } from 'react-icons/io5';
-import { MdOutlineGroup } from 'react-icons/md';
-import { FiPhoneCall } from 'react-icons/fi';
+import { IoSearchOutline } from 'react-icons/io5';
+import axios from 'axios';
+import searchEmpty from '../../../src/assets/images/noProFound.png'
 
 const ResNavbar = () => {
     const [Value , SetValue] = useState(true)
+    const [search , setSearch] = useState('')
+
+    // ---------------Api--------------
+    const [product , setProduct] = useState([])
+    const [filProduct , setFilProduct] = useState([])
+    // ------Axios 
+    useEffect(() => {
+        axios.get('https://dummyjson.com/products')
+        .then((res)=>(setProduct(res.data.products)))
+        .catch((err)=>(console.log(err)))
+    }, [])
+
+    // --------------- Handle Search 
+    const handleSearch = ()=>{
+       const filteredPro = product.filter(item => item.title.toLowerCase().includes(search.toLowerCase()))
+       setFilProduct(filteredPro)
+    }
+
+    // ------------ Navigate to product 
+    // ---------------------Redirect To Details 
+    const navigate = useNavigate()
+
+    const handleNav = (idNo)=>{
+      navigate(`/details/${idNo}`)
+      setSearch('')
+    }
   return (
     <>
-    <nav className='lg:hidden block z-50 py-[12px]'>
+    <nav className='lg:hidden block z-50 py-[16px]'>
         <div className="container">
-            <div id="NavBar_Row" className='py-[20px] flex items-center justify-between' data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-                <div className='w-[110px]'>
+            <div id="NavBar_Row" className='flex items-center justify-between' data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                <div className='w-[70px]'>
                     <Link to={'/'}><img src={Logo} alt="Logo" /></Link>
+                </div>
+                {/* -----------Search--------  */}
+                <div className='w-[160px] h-[38px] relative'>
+                    <input onChange={(e)=>{setSearch(e.target.value), handleSearch()}} type="text" className='border-1 border-borderCol h-full outline-none rounded-[4px] pl-4 w-full' placeholder='Search...' value={search}/>
+                    <div className='text-subText text-lg font-bold cursor-pointer absolute top-[10px] right-2.5'>
+                        <IoSearchOutline />
+                    </div>
                 </div>
                 {/* -----------Nav button--------  */}
                 <div className='flex items-center gap-5 text-2xl text-black'>
@@ -45,6 +78,26 @@ const ResNavbar = () => {
                 </ul>
             </div>
         </div>
+        {/* ---------Search items--------- */}
+                    <div className={`${search == ''? 'hidden' : ''} bg-[#F6F5FF] absolute top-30 right-[0px] w-full h-auto max-h-[600px] px-[12px] py-[32px] z-10 rounded-md overflow-y-scroll shadow-[0_3px_10px_rgb(0,0,0,0.2)]`}>
+                      {/* ------------SearchError---------- */}
+                        <div className={`${filProduct == 0? '' : 'hidden'} flex flex-col gap-6 items-center justify-center`}>
+                          <img className='w-[350px]' src={searchEmpty} alt="Sorry no Product Founded :(" />
+                          <p className='text-xl text-BlueText font-josefin'>Sorry No products founded :(</p>
+                        </div>
+                        {
+                            filProduct.map((item , i)=>(
+                                <div onClick={()=>{handleNav(item.id), setSearch('')}} key={i} className='flex items-center gap-5 border-b-1 border-subText py-3 duration-[.2s] hover:bg-[#cacccf] cursor-pointer'>
+                                    <img className='w-[60px]' src={item.thumbnail} alt="ProductImg" />
+                                    <div>
+                                    <h2 className='text-BlueText font-medium font-josefin text-base'>{item.title}</h2>
+                                    <p className='text-subText font-normal font-josefin text-sm mt-1 mb-1'>{item.category}</p>
+                                    <p className='text-brand font-medium font-josefin text-[14px]'>${item.price}</p>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
     </nav>
     </>
   )
