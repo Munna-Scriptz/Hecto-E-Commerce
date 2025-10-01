@@ -68,11 +68,14 @@ const Details = () => {
         {/* -------------------Product Details */}
         <div className='container'>
             <div className='flex lg:flex-row flex-col items-center justify-between'>
-                <div className='lg:w-[700px] w-full'>
-                    <ProductSlide images={images} settings={{ direction: "vertical", zoom: true, thumbnailPosition: "left", transitionDuration: 300,}}/>
+                <div className='lg:w-[650px] w-full lg:block hidden'>
+                    <ProductSlide thumbnailClassName='w-[160px]' images={images} settings={{ direction: "vertical", zoom: true, thumbnailPosition: "left", transitionDuration: 300,}}/>
+                </div>
+                <div className='w-full lg:hidden mb-[60px]'>
+                    <ProductSlide thumbnailClassName='w-[80px]' images={images} settings={{ direction: "horizontal", zoom: true, thumbnailPosition: "bottom", transitionDuration: 300,}}/>
                 </div>
                 <div className='lg:w-[560px] w-full'>
-                    <h2 className='text-primary text-4xl font-semibold mb-3 font-josefin'>{product.title}</h2>
+                    <h2 className='text-primary md:text-4xl text-[22px] font-semibold mb-3 font-josefin'>{product.title}</h2>
                     <div className='flex items-center gap-2'>
                         <div className='flex items-center gap-1 text-[#FFC416] text-[10px]'>
                             <FaStar />
@@ -89,9 +92,9 @@ const Details = () => {
                         <p className='text-brand line-through font-josefin mt-3'>$52.00</p>
                     </div>
                     {/* ------------Details  */}
-                    <p className='text-subText font-josefin leading-[29px] mt-3'>{product.description}</p>
+                    <p className='text-subText md:text-base text-sm font-josefin md:leading-[29px] mt-3'>{product.description}</p>
                     {/* ------------Add to Card  */}
-                    <div className='flex items-center gap-[20px] mt-[34px]'>
+                    <div className='flex items-center md;gap-[20px] gap-[10px] md:mt-[34px] mt-[16px]'>
                         <p className='text-primary font-josefin'>Add To cart</p>
                         <div onClick={()=>handleCart(product.id)} className='w-[30px] h-[30px] rounded-full flex items-center justify-center hover:bg-brand hover:text-white text-brand cursor-pointer duration-300'>
                             <FaRegHeart />
@@ -110,7 +113,7 @@ const Details = () => {
         {/* -------------------Product Texts */}
         <DetailsText/>
         {/* -------------------Related Products */}
-        <div className='lg:mt-[240px] mt-[120px]'>
+        <div className='lg:mt-[240px] mt-[80px]'>
             <DetailsRelated/>
         </div>
         {/* -------------------Brands */}

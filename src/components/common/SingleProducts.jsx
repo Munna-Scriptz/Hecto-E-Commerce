@@ -37,16 +37,16 @@ const SingleProducts = ({proImg , proName , ProDesc , proPrice , handleNav , add
         {/* ---------Product Text------- */}
         <div className='mt-[57px]'>
             <p className='text-brand text-lg font-bold font-lato line-clamp-1'>{proName}</p>
-            <p className='text-subText font-medium font-lato mt-1 line-clamp-2'>{ProDesc}</p>
+            <p className='text-subText md:text-base text-xs font-medium font-lato mt-1 line-clamp-2'>{ProDesc}</p>
             <div className='flex items-center justify-between mt-4'>
-                <p className='text-[#151875] text-[18px] font-lato'>${proPrice}</p>
+                <p className='text-[#151875] md:text-lg text-base font-lato'>${proPrice}</p>
                 <div className='flex items-center gap-1.5'>
                     <FaStar className='text-[#FBBF24]'/>
                     <p className='text-[#151875] text-[16px] font-lato'>4.9</p>
                 </div>
             </div>
             <div className='flex items-center justify-between'>
-                <p className='text-[#151875] text-[16px] font-lato mt-[9px]'>Code - Y523201</p>
+                <p className='text-[#151875] md:text-[16px] text-sm font-lato mt-[9px]'>Code - Y523201</p>
                 <div className='flex items-center gap-1'>
                     <span className='bg-[#05E6B7] w-[14px] h-[4px] '></span>
                     <span className='bg-[#F701A8] w-[14px] h-[4px] '></span>
