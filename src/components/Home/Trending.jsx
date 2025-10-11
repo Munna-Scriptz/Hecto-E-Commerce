@@ -17,7 +17,6 @@ const Trending = () => {
         dots: true,
         infinite: true,
         arrows: false,
-        speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
@@ -63,7 +62,7 @@ const Trending = () => {
     const [product , setProduct] = useState([])
     // ------Axios 
     useEffect(() => {
-        axios.get('https://dummyjson.com/products/category/furniture')
+        axios.get('https://dummyjson.com/products/category/home-decoration')
         .then((res)=>(setProduct(res.data.products)))
         .catch((err)=>(console.log(err)))
     }, []);

@@ -10,7 +10,6 @@ const TopCategory = () => {
     dots: true,
     infinite: true,
     arrows: false,
-    speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,

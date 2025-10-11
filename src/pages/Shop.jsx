@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router'
 import { useDispatch } from 'react-redux'
 import { CartAllIds } from '../CartSlice';
 import Loading from '../components/common/Loading'
+import Pagination from '../components/common/Pagination'
 const Shop = () => {
   const [loader , setLoader] = useState(false)
   const [product , setProducts] = useState([])
@@ -40,6 +41,17 @@ const Shop = () => {
       
       dispatch(CartAllIds(cartIds));
     };
+    const [cate , setCate] = useState([])
+    const yolo = product.filter((item)=>{
+        if(item.category.includes(cate)) return item 
+    })
+    const [page, setPage] = useState(1);
+    const itemsPerPage = 9;
+        // -----------Pagination
+        const start = (page - 1) * itemsPerPage;
+        const currentItems = yolo.slice(start, start + itemsPerPage);
+        const totalPages = Math.ceil(yolo.length / itemsPerPage);
+        
   return (
     <>
       <BreadCrumb pageName={'Shop'} to={'shop'}/>
@@ -51,11 +63,15 @@ const Shop = () => {
         <div className="mt-[64px]">
           <div className='flex items-center gap-[53px] flex-wrap'>
             {
-              product.map((item , i)=>(
+              currentItems.map((item , i)=>(
                 <SingleShopProduct handleCart={()=>handleCart(item.id)} handleNav={()=>handleNav(item.id)} proImage={item.thumbnail} proName={item.title} proPrice={item.price} key={i}/>
               ))
             }
         </div>
+        {/* -----Buttons  */}
+          <div className='mr-[24px]'>
+              <Pagination totalPages={totalPages} currentPage={page} setPage={setPage} />
+          </div>
         </div>
 
 

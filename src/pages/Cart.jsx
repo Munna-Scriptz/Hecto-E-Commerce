@@ -18,7 +18,7 @@ const Cart = () => {
   console.log(filteredPro)
   // ---------------Api--------------
     useEffect(() => {
-      axios.get(`https://dummyjson.com/products/`)
+      axios.get(`https://dummyjson.com/products?limit=0`)
       .then((res)=>(setProduct(res.data.products) , setLoader(true)))
       .catch((err)=>(console.log(err)))
     }, []);
