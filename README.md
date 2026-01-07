@@ -1,4 +1,4 @@
-🛍️ Hecto E-Commerce
+Hecto E-Commerce
 
 A fully-functional, modern React.js E-Commerce web app designed for seamless shopping experiences — with Add to Cart, Product Search, Multi-Page Navigation, and Dynamic Product Data fetched from the DummyJSON API.
 Fully responsive and optimized for performance, Hecto delivers a real-world e-commerce experience with clean UI and smooth interactions.
@@ -60,10 +60,7 @@ hecto-ecommerce/
 │   │   └── Checkout.js
 │   ├── App.js
 │   ├── index.js
-│   ├── styles/
-│   │   └── app.css
-│   └── api/
-│       └── dummyData.js
+│   ├── app.css
 └── package.json
 
 
